@@ -1,0 +1,17 @@
+.btn-subir{
+    width: 90%;
+    height: 10%;
+    background: #43AFEF;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-subir p {
+    color: #fff;
+}

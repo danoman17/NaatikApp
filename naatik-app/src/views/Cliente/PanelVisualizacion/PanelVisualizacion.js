@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navbar, TarjetaMaestra, ListaDesplegable } from '../../../routeIndex';
+import { Navbar, TarjetaMaestra, BarraLateral } from '../../../routeIndex';
 import './panelVisualizacion.css'
 
 
@@ -11,7 +11,16 @@ const PanelVisualizacion = () => {
         <TarjetaMaestra>
 
           <div className='contenedor-general-panel'>
-              <ListaDesplegable></ListaDesplegable>
+              {/* <ListaDesplegable></ListaDesplegable> */}
+              {/* <BoxChurns></BoxChurns> */}
+              <BarraLateral></BarraLateral>
+
+              <div className='contendor-general-tarjeta'>
+                  <div className='tarjeta-maestra'>
+                      <h1>content</h1>
+                  </div>
+              </div>
+
           </div>
 
         </TarjetaMaestra>

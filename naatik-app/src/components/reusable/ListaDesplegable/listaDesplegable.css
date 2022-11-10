@@ -17,16 +17,17 @@
 
 .contenedor-listaDesplegable .header-listaDesplegable {
     width: 100%;
-    height: auto;
+    height: 90px;
     min-height: 60px;
     border-radius: 8px 8px 0 0 ;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Dosis', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 1.2rem;
     font-weight: bold;
     background: #0C5380;
+    padding-top: 10px;
 }
 
 .contenedor-listaDesplegable .contenido-listaDesplegable {
@@ -51,9 +52,10 @@
     height: 100%;
     width: 100%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
     overflow-y: scroll;
+    padding: 12px;
 }
 
 

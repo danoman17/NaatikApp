@@ -1,34 +1,15 @@
 import React from 'react';
-import { render } from "react-dom";
 
-import {
-    CircularProgressbar,
-    CircularProgressbarWithChildren,
-    buildStyles
-  } from "react-circular-progressbar";
-  import "react-circular-progressbar/dist/styles.css";
+import { CircularProgress, CircularProgressLabel } from '@chakra-ui/react'
 
 
-const percentage = 35;
-
-function CirculoPorcentaje() {
+function CirculoPorcentaje({porcentaje}) {
     return (
         <div style={{ width: 200, height: 200 }}>
 
-            <CircularProgressbar 
-                value={percentage}
-                strokeWidth={10}
-                text={`${percentage}%`} 
-                styles={buildStyles({
-                    backgroundColor: "#3e98c7",
-                    textColor: "CornflowerBlue",
-                    pathColor: "CornflowerBlue",
-                    trailColor: "Gainsboro",
-                    strokeLinecap: "butt",
-                    textSize: "2em"
-                  })}
-                
-                />;
+              <CircularProgress  value={porcentaje} color='#FE5694' size='120px'  getValueText>
+                <CircularProgressLabel color='#FE5694' > {porcentaje}%</CircularProgressLabel>
+              </CircularProgress>
 
         </div>
     );

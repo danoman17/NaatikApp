@@ -11,7 +11,7 @@ const BotonInicio = ({title, type, onClick}) => {
         <button className='btn-contenedor-general' id='btn-contenedor-geberal' onClick={onClick}>
             <div className='section-up'>
                 {
-                    (type=="upload")? <AiOutlineUpload/> : <AiFillFolderOpen/>
+                    (type==="upload")? <AiOutlineUpload/> : <AiFillFolderOpen/>
                 }
             </div>
             <div className='section-down'>

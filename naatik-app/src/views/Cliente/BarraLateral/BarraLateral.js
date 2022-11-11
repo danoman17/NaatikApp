@@ -12,6 +12,7 @@ const BarraLateral = () => {
                 <AiFillFolder/>
                 <p> /PATH A CSV/csv.csv </p>
             </div>
+            
             <ListaDesplegable></ListaDesplegable>
             <BoxChurns></BoxChurns>
 

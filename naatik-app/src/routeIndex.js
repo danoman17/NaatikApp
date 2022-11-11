@@ -20,5 +20,7 @@ export {default as BoxChurns} from './components/reusable/BoxChurns/BoxChurns.js
 export {default as SliderMultipleIndex} from './components/reusable/SliderMultipleIndex/SliderMultipleIndex.js';
 export {default as PieChart} from './components/reusable/PieChart/PieChart.js';
 export {default as ResultadosTabla} from './components/reusable/ResultadosTabla/ResultadosTabla.js';
-
-
+export {default as CirculoPorcentaje} from './components/reusable/CirculoPorcentaje/CirculoPorcentaje.js';
+export {default as BarraProbAbandono} from './components/reusable/BarraProbAbandono/BarraProbAbandono.js';
+export {default as ShowAmount} from './components/reusable/ShowAmount/ShowAmount.js';
+export {default as TextSlider} from './components/reusable/TextSlider/TextSlider.js';

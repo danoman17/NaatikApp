@@ -9,7 +9,7 @@ export const Template = ({content}) => {
         <Navbar>  
 
         </Navbar>
-        <TarjetaMaestra children={content}> 
+        <TarjetaMaestra children={content}>
         </TarjetaMaestra>
     </>
   )

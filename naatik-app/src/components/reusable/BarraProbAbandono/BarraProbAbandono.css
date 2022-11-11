@@ -1,0 +1,34 @@
+@import url(https://fonts.google.com/specimen/Inter?query=inter);
+
+.probAbandodoTitulo{
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 5px;
+
+}
+
+.porcentageAbandojoBajo{
+    font: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 40px;
+    text-align: center;
+    color: #70AE47;
+}
+
+.porcentageAbandojoMedio{
+    font: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 40px;
+    text-align: center;
+    color: #EE7D30;
+}
+
+.porcentageAbandojoAlto{
+    font: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 40px;
+    text-align: center;
+    color: #982B52;
+}

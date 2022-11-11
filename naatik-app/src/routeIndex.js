@@ -18,5 +18,6 @@ export {default as ListaDesplegable} from './components/reusable/ListaDesplegabl
 export {default as BotonPerfilesClusters} from './components/reusable/BotonPerfilesClusters/BotonPerfilesClusters.js';
 export {default as BoxChurns} from './components/reusable/BoxChurns/BoxChurns.js';
 export {default as SliderMultipleIndex} from './components/reusable/SliderMultipleIndex/SliderMultipleIndex.js';
+export {default as PieChart} from './components/reusable/PieChart/PieChart.js';
 
 

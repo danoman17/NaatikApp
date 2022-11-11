@@ -1,17 +1,17 @@
 .contenedor-general-barra-lateral {
     height: 95%;
-    width: 20%;
+    width: 15%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    padding: 10px;
+    padding: 5px;
 
 }
 
 .text-container {
     width: 100%;
-    height: 10%;
+    height: 8%;
     display: flex;
     justify-content: flex-start;
     align-items: center;

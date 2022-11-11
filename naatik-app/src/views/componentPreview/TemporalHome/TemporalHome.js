@@ -14,6 +14,9 @@ export const TemporalHome = () => {
       <Link to='/BarraProbAbandono' className='link_tmp'>BarraProbAbandono</Link>
       <Link to='/ShowAmount' className='link_tmp'>ShowAmount</Link>
       <Link to='/TextSlider' className='link_tmp'>TextSlider</Link>
+      <Link to='/PantallaDividida' className='link_tmp'>PantallaDividida</Link>
+
+      
       
       
     </>

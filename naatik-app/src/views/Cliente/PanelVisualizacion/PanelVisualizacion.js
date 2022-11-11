@@ -1,7 +1,6 @@
 import React from 'react'
-import { Navbar, TarjetaMaestra, BarraLateral, SliderMultipleIndex, PieChart } from '../../../routeIndex';
+import { Navbar, TarjetaMaestra, BarraLateral, SliderMultipleIndex  } from '../../../routeIndex';
 import './panelVisualizacion.css'
-
 
 const PanelVisualizacion = () => {
   return (
@@ -11,19 +10,27 @@ const PanelVisualizacion = () => {
         <TarjetaMaestra>
 
           <div className='contenedor-general-panel'>
-              {/* <ListaDesplegable></ListaDesplegable> */}
-              {/* <BoxChurns></BoxChurns> */}
               <BarraLateral></BarraLateral>
 
               <div className='contendor-general-tarjeta'>
                   <div className='tarjeta-maestra'>
-                    <PieChart></PieChart>
+                     <div className='container-slider'>
+                     
+                     </div>
+                     <div className='container-barraprobabandono'> 
+                     
+
+                     </div>
+                     <div className='container-btn'>
+
+                     </div>
                   </div>
               </div>
 
           </div>
 
         </TarjetaMaestra>
+
     </>
   )
 }

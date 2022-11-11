@@ -6,6 +6,7 @@ export {default as UploadFiles } from './views/Cliente/UploadFiles/UploadFiles.j
 export {default as Home} from './views/Cliente/Home/Home.js';
 export {default as PanelVisualizacion} from './views/Cliente/PanelVisualizacion/PanelVisualizacion.js';
 export {default as BarraLateral} from './views/Cliente/BarraLateral/BarraLateral.js';
+export {default as PantallaDividida} from './views/Cliente/PantallaDividida/pantallaDividida.js';
 
 
 // componentes

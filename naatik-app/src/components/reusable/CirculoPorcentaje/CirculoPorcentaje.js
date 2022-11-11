@@ -3,6 +3,7 @@ import React from 'react';
 import { CircularProgress, CircularProgressLabel } from '@chakra-ui/react'
 
 
+
 function CirculoPorcentaje({porcentaje}) {
     return (
         <div style={{ width: 200, height: 200 }}>

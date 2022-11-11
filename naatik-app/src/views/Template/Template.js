@@ -1,6 +1,8 @@
-import React from 'react'
+
 import TarjetaMaestra from '../../components/reusable/TarjetaMaestra/TarjetaMaestra';
 import { Navbar } from '../../routeIndex';
+import React from 'react';
+
 
 
 export const Template = ({content}) => {
@@ -10,6 +12,7 @@ export const Template = ({content}) => {
 
         </Navbar>
         <TarjetaMaestra children={content}>
+
         </TarjetaMaestra>
     </>
   )

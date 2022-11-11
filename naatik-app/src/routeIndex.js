@@ -19,5 +19,6 @@ export {default as BotonPerfilesClusters} from './components/reusable/BotonPerfi
 export {default as BoxChurns} from './components/reusable/BoxChurns/BoxChurns.js';
 export {default as SliderMultipleIndex} from './components/reusable/SliderMultipleIndex/SliderMultipleIndex.js';
 export {default as PieChart} from './components/reusable/PieChart/PieChart.js';
+export {default as ResultadosTabla} from './components/reusable/ResultadosTabla/ResultadosTabla.js';
 
 

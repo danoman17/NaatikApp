@@ -12,7 +12,7 @@ const chartEvents = [
           const chart = chartWrapper.getChart();
           google.visualization.events.addListener(chart, "click", e => {
             const { targetID } = e;
-            console.log(targetID);
+            console.log("selelected: " + targetID);
           });
         }
     }

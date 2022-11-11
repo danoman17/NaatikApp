@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navbar, TarjetaMaestra, BarraLateral, ResultadosTabla } from '../../../routeIndex';
+import { Navbar, TarjetaMaestra, BarraLateral, SliderMultipleIndex, PieChart } from '../../../routeIndex';
 import './panelVisualizacion.css'
 
 
@@ -17,7 +17,7 @@ const PanelVisualizacion = () => {
 
               <div className='contendor-general-tarjeta'>
                   <div className='tarjeta-maestra'>
-                    <ResultadosTabla></ResultadosTabla>
+                    <PieChart></PieChart>
                   </div>
               </div>
 

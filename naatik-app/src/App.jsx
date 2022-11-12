@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import {  Home, TemporalHome, Template, UploadFiles, PanelVisualizacion, CirculoPorcentaje, BarraProbAbandono, ShowAmount, TextSlider, PantallaDividida, PantallaPerfil } from './routeIndex.js'
+import {  Home, TemporalHome, Template, UploadFiles, PanelVisualizacion, CirculoPorcentaje, BarraProbAbandono, ShowAmount, TextSlider, PantallaDividida, PantallaPerfil, BarChart } from './routeIndex.js'
 
 
 
@@ -31,6 +31,8 @@ const App = () => {
                 <Route path='PantallaDividida' element={<PantallaDividida/>} />
 
                 <Route path='PantallaPerfil' element={<PantallaPerfil/>} />
+
+                <Route path='BarChart' element={<BarChart/>} />
 
                 
 

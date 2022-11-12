@@ -25,7 +25,7 @@
 
 .contenedor-BillAmount-HyM{
     display: flex;
-    height: 25%;
+    height: 50%;
     width: 80%;
     padding: 25px;
     background: rgb(187, 187, 187);
@@ -35,6 +35,7 @@
     margin-top: 50px;
     margin-bottom: 50px;
     align-items: center;
+    justify-content: space-around;
 }
 
 .contenedor-TableLines{

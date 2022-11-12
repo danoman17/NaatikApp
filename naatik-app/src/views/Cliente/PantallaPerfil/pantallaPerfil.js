@@ -1,6 +1,6 @@
 import React from 'react'
 import './pantallaPerfil.css'
-import { Navbar, TarjetaMaestra, BarraLateral, ShowAmount, ResultadosTabla} from '../../../routeIndex';
+import { Navbar, TarjetaMaestra, BarraLateral, ShowAmount, ResultadosTabla, BarChart} from '../../../routeIndex';
 
 const pantallaPerfil = () => {
   return (
@@ -17,8 +17,14 @@ const pantallaPerfil = () => {
               <div className='contendor-PerfilInfo'>
 
               <div className='contenedor-BillAmount-HyM'>
+                
+                <div> <ShowAmount Label={'Total de Factura'} Amount={'123000'}></ShowAmount> </div>
 
-              <ShowAmount Label={'Total de Factura'} Amount={'123000'}></ShowAmount>
+                <div> <BarChart></BarChart> </div>
+
+              
+
+              
 
               </div>
 
@@ -31,7 +37,7 @@ const pantallaPerfil = () => {
               <div className='contenedor-GananciaLinea'>
 
               <ShowAmount Label={'Ganancias de Linea'}  Amount={'199999'}></ShowAmount>
-              
+
               </div>
       
                   </div>

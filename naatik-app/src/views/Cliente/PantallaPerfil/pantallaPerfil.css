@@ -19,8 +19,22 @@
     overflow-y: scroll;
     min-height:  95%;
     padding-left: 10%;
-    
-    
+}
+
+.txt-header {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    flex-direction: row;
+}
+
+.txt-header-green {
+    margin-left: 10px;
+    color: #70AE47;
 }
 
 .contenedor-BillAmount-HyM{

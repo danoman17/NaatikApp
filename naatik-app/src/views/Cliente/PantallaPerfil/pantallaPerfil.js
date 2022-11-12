@@ -10,11 +10,16 @@ const pantallaPerfil = () => {
         <Navbar>  </Navbar>
 
         <TarjetaMaestra>
-
           <div className='contenedor-general-panel'>
+            
               <BarraLateral></BarraLateral>
 
               <div className='contendor-PerfilInfo'>
+              <div className='txt-header'>
+                <p className='txt-header-p'> Subgrupo con probabilidad baja: </p>
+                <p className='txt-header-green'> ?% - ?% </p>
+
+              </div>
 
               <div className='contenedor-BillAmount-HyM'>
                 
@@ -22,9 +27,6 @@ const pantallaPerfil = () => {
 
                 <div> <BarChart></BarChart> </div>
 
-              
-
-              
 
               </div>
 

@@ -7,6 +7,7 @@ export {default as Home} from './views/Cliente/Home/Home.js';
 export {default as PanelVisualizacion} from './views/Cliente/PanelVisualizacion/PanelVisualizacion.js';
 export {default as BarraLateral} from './views/Cliente/BarraLateral/BarraLateral.js';
 export {default as PantallaDividida} from './views/Cliente/PantallaDividida/pantallaDividida.js';
+export {default as PantallaPerfil} from './views/Cliente/PantallaPerfil/pantallaPerfil.js';
 
 
 // componentes

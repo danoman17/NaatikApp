@@ -15,6 +15,7 @@ export const TemporalHome = () => {
       <Link to='/ShowAmount' className='link_tmp'>ShowAmount</Link>
       <Link to='/TextSlider' className='link_tmp'>TextSlider</Link>
       <Link to='/PantallaDividida' className='link_tmp'>PantallaDividida</Link>
+      <Link to='/PantallaPerfil' className='link_tmp'>PantallaPerfil</Link>
 
       
       

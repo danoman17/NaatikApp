@@ -3,6 +3,9 @@ import { Navbar, TarjetaMaestra, BarraLateral, PieChart, CirculoPorcentaje,  Tex
 import './pantallaDividida.css'
 
 const PantallaDividida = () => {
+
+  
+
   return (
     <>
         <Navbar>  </Navbar>

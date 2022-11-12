@@ -2,8 +2,14 @@ import React from 'react'
 import './TextSlider.css'
 
 import { Button, Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
+import { useNavigate } from 'react-router-dom'
 
 const TextSlider = ( Baja, Media, Alta  ) => {
+  const navigate = useNavigate();
+
+  const goToPerfil = () => {
+    navigate('/PantallaPerfil');
+}
   return (
 
 
@@ -19,17 +25,17 @@ const TextSlider = ( Baja, Media, Alta  ) => {
 
                   <TabPanel>
                   <p>Resumen de Bajo (Falta aplicar css)</p>
-                  <Button colorScheme='green' >Siguiente</Button>
+                  <Button colorScheme='green' onClick={goToPerfil} >Siguiente</Button>
                   </TabPanel>
 
                   <TabPanel>
                   <p>Resumen de Medio (Falta aplicar css)</p>
-                  <Button colorScheme='orange'>Siguiente</Button>
+                  <Button colorScheme='orange' onClick={goToPerfil}>Siguiente</Button>
                   </TabPanel>
 
                   <TabPanel>
                   <p>Resumen de Alto (Falta aplicar css)</p>
-                  <Button colorScheme='red'>Siguiente</Button>
+                  <Button colorScheme='red' onClick={goToPerfil}>Siguiente</Button>
                   </TabPanel>
                   
             </TabPanels>

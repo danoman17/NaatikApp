@@ -5,9 +5,9 @@ import { Button, Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/reac
 
 const TextSlider = ( Baja, Media, Alta  ) => {
   return (
-    <box position="relative" h="100vh" p={6}>
 
-      <Tabs variant='unstyled' boxShadow='2xl' p='3' rounded='md' bg='white' w='50%' overflow='scroll'>
+
+      <Tabs variant='unstyled' boxShadow='2xl' p='3' rounded='md' bg='white' w='80%' h='80%' overflow='scroll'>
 
         <TabList>
           <Tab _selected={{ color: 'white', bg: '#70AE47' }}>Bajo</Tab>
@@ -19,22 +19,21 @@ const TextSlider = ( Baja, Media, Alta  ) => {
 
                   <TabPanel>
                   <p>Resumen de Bajo (Falta aplicar css)</p>
-                  <Button colorScheme='green' >Button</Button>
+                  <Button colorScheme='green' >Siguiente</Button>
                   </TabPanel>
 
                   <TabPanel>
                   <p>Resumen de Medio (Falta aplicar css)</p>
-                  <Button colorScheme='orange'>Button</Button>
+                  <Button colorScheme='orange'>Siguiente</Button>
                   </TabPanel>
 
                   <TabPanel>
                   <p>Resumen de Alto (Falta aplicar css)</p>
-                  <Button colorScheme='red'>Button</Button>
+                  <Button colorScheme='red'>Siguiente</Button>
                   </TabPanel>
                   
             </TabPanels>
       </Tabs>
-      </box>
   )
 }
 

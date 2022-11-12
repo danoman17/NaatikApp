@@ -1,5 +1,7 @@
 import React from 'react'
+
 import { Navbar, TarjetaMaestra, BarraLateral, SliderMultipleIndex, BarraProbAbandono, BotonSubir } from '../../../routeIndex';
+
 import './panelVisualizacion.css'
 import {Routes, Route, useNavigate} from 'react-router-dom';
 

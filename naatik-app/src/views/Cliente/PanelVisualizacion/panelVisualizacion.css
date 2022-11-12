@@ -14,17 +14,45 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: row;
 }
 
 .contendor-general-tarjeta .tarjeta-maestra {
     height: 95%;
     width: 95%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     background: #ffff;
     border-radius: 30px;
     box-shadow: 5px 6px 38px -10px rgba(0,0,0,0.75);
     -webkit-box-shadow: 5px 6px 38px -10px rgba(0,0,0,0.75);
     -moz-box-shadow: 5px 6px 38px -10px rgba(0,0,0,0.75);
+    flex-direction: column;
+
 }
+
+.container-slider{
+width: 70%;
+/* border-radius: 30px;
+box-shadow: 5px 6px 38px -10px rgba(0,0,0,0.75);
+height: 10%; */
+}
+
+.container-barraprobabandono{
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-btn{
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-btn .btn-subir{
+    height: 5em;
+    width: 100%;
+}
+

@@ -13,25 +13,32 @@ const SliderMultipleIndex = () => {
 
   return (
     <>
-<RangeSlider aria-label={['min', 'max']} defaultValue={[25,50, 80]} onChange={(val) => setSliderValue(val)}>
-      <RangeSliderMark value={25} mt='1' ml='-2.5' fontSize='sm'>
+    
+<RangeSlider  aria-label={['min', 'max']} defaultValue={[25,50, 80]} onChange={(val) => setSliderValue(val)}>
+      <RangeSliderMark value={0} mt='5' ml='-2.5' fontSize='sm' fontFamily='Montserrat' fontWeight='bold'>
+        0%
+      </RangeSliderMark>
+      <RangeSliderMark value={25} mt='5' ml='-2.5' fontSize='sm' fontFamily='Montserrat' fontWeight='bold'>
         25%
       </RangeSliderMark>
-      <RangeSliderMark value={50} mt='1' ml='-2.5' fontSize='sm'>
+      <RangeSliderMark value={50} mt='5' ml='-2.5' fontSize='sm' fontFamily='Montserrat' fontWeight='bold'>
         50%
       </RangeSliderMark>
-      <RangeSliderMark value={75} mt='1' ml='-2.5' fontSize='sm'>
+      <RangeSliderMark value={75} mt='5' ml='-2.5' fontSize='sm' fontFamily='Montserrat' fontWeight='bold'>
         75%
+      </RangeSliderMark>
+      <RangeSliderMark value={100} mt='5' ml='-3.5' fontSize='sm' fontFamily='Montserrat' fontWeight='bold'>
+        100%
       </RangeSliderMark>
 
       <RangeSliderMark
         value={sliderValue[0]}
         textAlign='center'
-        bg='blue.500'
+        bg='#2596be'
         color='white'
         mt='-10'
         ml='-5'
-        w='12'
+        w='12' fontFamily='Montserrat'
       >
         {sliderValue[0]}%
       </RangeSliderMark>
@@ -39,11 +46,11 @@ const SliderMultipleIndex = () => {
       <RangeSliderMark
         value={sliderValue[1]}
         textAlign='center'
-        bg='blue.500'
+        bg='#2596be'
         color='white'
         mt='-10'
         ml='-5'
-        w='12'
+        w='12' fontFamily='Montserrat'
       >
         {sliderValue[1]}%
         </RangeSliderMark>
@@ -51,28 +58,29 @@ const SliderMultipleIndex = () => {
         <RangeSliderMark
         value={sliderValue[2]}
         textAlign='center'
-        bg='blue.500'
+        bg='#2596be'
         color='white'
         mt='-10'
         ml='-5'
-        w='12'
+        w='12' fontFamily='Montserrat'
       >
         {sliderValue[2]}%
         
       </RangeSliderMark>
-      <RangeSliderTrack bg='red.100'>
-        <RangeSliderFilledTrack bg='tomato' />
+      <RangeSliderTrack bg='gray.00' >
+        <RangeSliderFilledTrack bg='#2ECC71'  />
       </RangeSliderTrack>
-      <RangeSliderThumb boxSize={6} index={0}>
+      <RangeSliderThumb boxSize={8} index={0}>
         <Box color='tomato' as={MdGraphicEq} />
       </RangeSliderThumb>
-      <RangeSliderThumb boxSize={6} index={1}>
+      <RangeSliderThumb boxSize={8} index={1}>
         <Box color='tomato' as={MdGraphicEq} />
       </RangeSliderThumb>
-      <RangeSliderThumb boxSize={6} index={2}>
+      <RangeSliderThumb boxSize={8} index={2}>
         <Box color='tomato' as={MdGraphicEq} />
       </RangeSliderThumb>
     </RangeSlider>
+    
     </>
   )
 }

@@ -19,7 +19,7 @@ const UploadFiles = () => {
 
         <TarjetaMaestra>
             <DragDropFile/>
-            <BotonSubir onClick={goToPanel}/>
+            <BotonSubir onClick={goToPanel} TextBtn={'Subir'}/>
         </TarjetaMaestra>
     </>
   )

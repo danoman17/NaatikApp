@@ -19,8 +19,8 @@ export const data = [
   ];
   
   export const options = {
-    width: 400,
-    height: 300,
+    width: 600,
+    height: 400,
     bar: { groupWidth: "95%" },
     legend: { position: "none" },
   };

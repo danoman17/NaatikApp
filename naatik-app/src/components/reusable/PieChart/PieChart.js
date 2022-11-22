@@ -31,7 +31,7 @@ export const data = [
     chartArea:{width:'85%',height:'85%'}
   };
 
-  
+
 const PieChart = () => {
     
   return (

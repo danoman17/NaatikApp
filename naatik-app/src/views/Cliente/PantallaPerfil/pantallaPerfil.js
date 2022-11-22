@@ -1,6 +1,6 @@
 import React from 'react'
 import './pantallaPerfil.css'
-import { Navbar, TarjetaMaestra, BarraLateral, ShowAmount, ResultadosTabla, BarChart} from '../../../routeIndex';
+import { Navbar, TarjetaMaestra, BarraLateral, ShowAmount, ResultadosTabla, BarChart, BotonSubir} from '../../../routeIndex';
 
 const pantallaPerfil = () => {
   return (
@@ -15,10 +15,12 @@ const pantallaPerfil = () => {
               <BarraLateral></BarraLateral>
 
               <div className='contendor-PerfilInfo'>
+                <div className='Contenedor-texto'>
               <div className='txt-header'>
                 <p className='txt-header-p'> Subgrupo con probabilidad baja: </p>
                 <p className='txt-header-green'> ?% - ?% </p>
 
+              </div>
               </div>
 
               <div className='contenedor-BillAmount-HyM'>
@@ -40,6 +42,12 @@ const pantallaPerfil = () => {
 
               <ShowAmount Label={'Ganancias de Linea'}  Amount={'199999'}></ShowAmount>
 
+              </div>
+
+              <div className='Contenedor-boton'>
+
+                <BotonSubir TextBtn={'PDF'}></BotonSubir>
+                
               </div>
       
                   </div>

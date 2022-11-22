@@ -1,34 +1,47 @@
-@import url(https://fonts.google.com/specimen/Inter?query=inter);
-
 .probAbandodoTitulo{
+
     font-weight: bold;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 20px;
-    text-align: center;
-    margin-top: 5px;
+    font-family: 'Inter', sans-serif;
+    font-size: .9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
 
 }
 
 .porcentageAbandojoBajo{
-    font: bold;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 40px;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
     text-align: center;
     color: #70AE47;
 }
 
 .porcentageAbandojoMedio{
-    font: bold;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 40px;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.3rem;
     text-align: center;
     color: #EE7D30;
 }
 
 .porcentageAbandojoAlto{
-    font: bold;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 40px;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.3rem;
     text-align: center;
     color: #982B52;
 }

@@ -28,11 +28,10 @@ export const data = [
   export const options = {
     legend:'none',
     colors: ['#E89742','#AFAC84','#6088A5'],
-    chartArea:{width:'100%',height:'100%'}
+    chartArea:{width:'85%',height:'85%'}
   };
 
-
-
+  
 const PieChart = () => {
     
   return (

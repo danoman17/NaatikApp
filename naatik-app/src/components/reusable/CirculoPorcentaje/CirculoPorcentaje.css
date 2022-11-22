@@ -5,3 +5,9 @@
     justify-content: center;
     align-items: center;
 }
+
+#label-circularProgress {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+}

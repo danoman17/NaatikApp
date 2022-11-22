@@ -1,12 +1,10 @@
 .contenedor-listaDesplegable {
-    height: 55%;
+    height: 65%;
     width: 90%;
-    margin: auto;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
-
     box-shadow: 5px 6px 38px -10px rgba(0,0,0,0.75);
     -webkit-box-shadow: 5px 6px 38px -10px rgba(0,0,0,0.75);
     -moz-box-shadow: 5px 6px 38px -10px rgba(0,0,0,0.75);

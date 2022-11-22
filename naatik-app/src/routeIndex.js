@@ -27,3 +27,4 @@ export {default as BarraProbAbandono} from './components/reusable/BarraProbAband
 export {default as ShowAmount} from './components/reusable/ShowAmount/ShowAmount.js';
 export {default as TextSlider} from './components/reusable/TextSlider/TextSlider.js';
 export {default as BarChart} from './components/reusable/BarChart/BarChart.js';
+export {default as BarraNombreArchivo} from './components/reusable/BarraNombreArchivo/BarraNombreArchivo.js';

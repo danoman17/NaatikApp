@@ -39,31 +39,74 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
-    padding: 10px;
-    flex-direction: column;
+    padding: 5px;
 }
 
 
 .contendor-general-tarjeta .tarjeta-maestra .contenedor-der-pantalladiv .contendeor-PieChart{
     width: 100%;
-    height: 60%;
+    height: 70%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 30px;
+    flex-direction: column;
 }
 
-.contendor-general-tarjeta .tarjeta-maestra .contenedor-der-pantalladiv .contenedor-porcentaje{
+.contendor-general-tarjeta .tarjeta-maestra .contenedor-der-pantalladiv .contendeor-PieChart .contenedor-PieChart-header {
+    height: 10%;
     width: 100%;
-    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.contendor-general-tarjeta .tarjeta-maestra .contenedor-der-pantalladiv .contendeor-PieChart .contenedor-PieChart-header p{
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #6088A5;
+
+}
+
+.contendor-general-tarjeta .tarjeta-maestra .contenedor-der-pantalladiv .contendeor-PieChart .contenedor-PieChart-chart {
+
+    height: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.contendor-general-tarjeta .tarjeta-maestra .contenedor-der-pantalladiv .contenedor-porcentaje{
+    width: 80%;
+    height: 30%;
     display: flex;
     justify-content: center;
     align-items: center;    
     flex-direction: column;
+}
+
+.contendor-general-tarjeta .tarjeta-maestra .contenedor-der-pantalladiv .contenedor-porcentaje .contenedor-porcentaje-header{
+
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
+
+.contendor-general-tarjeta .tarjeta-maestra .contenedor-der-pantalladiv .contenedor-porcentaje .contenedor-porcentaje-header .texto-porcentaje{
+    font-family: 'Inter', sans-serif;
+    font-size: .9rem;
+    color: #6088A5;
+    font-weight: 500;
+}
+
 
 .contendor-general-tarjeta .tarjeta-maestra .contenedor-der-pantalladiv .contenedor-porcentaje .texto-porcentaje{
     display: block;

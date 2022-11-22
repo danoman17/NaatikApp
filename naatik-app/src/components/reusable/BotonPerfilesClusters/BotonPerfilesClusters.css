@@ -39,6 +39,12 @@
     border-radius: 5px;
     margin-bottom: 10px;
     cursor: pointer;
+    transition: all .3s ease-out;
+}
+
+
+.boton-general-normal:hover{
+    transform: translateX(10px);
 }
 
 .boton-general-normal .contenedor-interno-botones {

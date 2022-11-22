@@ -8,13 +8,13 @@ import {
   } from '@chakra-ui/react'
 
 
-const SliderMultipleIndex = () => {
-    const [sliderValue, setSliderValue] = useState([25, 50, 80])
+const SliderMultipleIndex = ({ values, setValues }) => {
+    // const [sliderValue, setSliderValue] = useState([25, 50, 80]);
 
   return (
     <>
     
-<RangeSlider  aria-label={['min', 'max']} defaultValue={[25,50, 80]} onChange={(val) => setSliderValue(val)}>
+<RangeSlider  aria-label={['min', 'max']} defaultValue={[values[0],values[1], values[2]]} onChange={(val) => setValues(val)}>
       <RangeSliderMark value={0} mt='5' ml='-2.5' fontSize='sm' fontFamily='Montserrat' fontWeight='bold'>
         0%
       </RangeSliderMark>
@@ -32,7 +32,7 @@ const SliderMultipleIndex = () => {
       </RangeSliderMark>
 
       <RangeSliderMark
-        value={sliderValue[0]}
+        value={values[0]}
         textAlign='center'
         bg='#2596be'
         color='white'
@@ -40,11 +40,11 @@ const SliderMultipleIndex = () => {
         ml='-5'
         w='12' fontFamily='Montserrat'
       >
-        {sliderValue[0]}%
+        {values[0]}%
       </RangeSliderMark>
 
       <RangeSliderMark
-        value={sliderValue[1]}
+        value={values[1]}
         textAlign='center'
         bg='#2596be'
         color='white'
@@ -52,11 +52,11 @@ const SliderMultipleIndex = () => {
         ml='-5'
         w='12' fontFamily='Montserrat'
       >
-        {sliderValue[1]}%
+        {values[1]}%
         </RangeSliderMark>
         
         <RangeSliderMark
-        value={sliderValue[2]}
+        value={values[2]}
         textAlign='center'
         bg='#2596be'
         color='white'
@@ -64,7 +64,7 @@ const SliderMultipleIndex = () => {
         ml='-5'
         w='12' fontFamily='Montserrat'
       >
-        {sliderValue[2]}%
+        {values[2]}%
         
       </RangeSliderMark>
       <RangeSliderTrack bg='gray.00' >

@@ -5,7 +5,7 @@ import {
     StatLabel,
     StatNumber,
     StatHelpText,
-    StatArrow, Box
+    StatArrow,
   } from '@chakra-ui/react'
 
   

@@ -1,6 +1,6 @@
 import React from 'react'
 import { BotonInicio } from '../../../routeIndex.js'
-import {Routes, Route, useNavigate} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import './BotonesInicio.css'
 
 const BotonesInicio = () => {

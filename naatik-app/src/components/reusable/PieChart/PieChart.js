@@ -18,22 +18,60 @@ const chartEvents = [
     }
 ];
 
-export const data = [
-    ["Grupo", "Porcentaje"],
-    ["Grupo1", 10],
-    ["Grupo2", 40],
-    ["Grupo3", 50],
-  ];
-  
   export const options = {
     legend:'none',
-    colors: ['#E89742','#AFAC84','#6088A5'],
+    colors: ['#E34956','#70AE47','#EE7D30','#982B52'],
     chartArea:{width:'85%',height:'85%'}
   };
 
 
-const PieChart = () => {
-    
+const PieChart = ({infoCluster}) => {
+  
+  const data = [["Grupo","Porcentaje"]];
+
+  // creamos el metodo que calcula los porcentajes de la PieChart.
+
+  function bringGroupName(index) {
+      if(index === 0){
+        return "Normal";
+      } 
+      if(index === 1){
+        return "Bajo";
+      }
+      if(index === 2){
+        return "Medio";
+      }
+      if(index === 3) {
+        return "Alto";
+      }else {
+        return "";
+      }
+  }
+
+
+  const calculatePercentages = () => {
+    let sumaTotal = 0;
+    let arrayAmount = [];
+
+
+    infoCluster.map((cluster)=> {
+      arrayAmount.push(cluster.amount);
+    });
+
+    arrayAmount.map(cantidad=>{
+      sumaTotal = cantidad + sumaTotal;
+    });
+
+
+
+    arrayAmount.map((amout,key)=> {
+      data.push([bringGroupName(key),amout*100/sumaTotal]);
+    });
+  };
+
+  calculatePercentages();
+
+
   return (
     <>
         <Chart

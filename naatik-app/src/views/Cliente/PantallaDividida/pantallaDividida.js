@@ -1,14 +1,62 @@
-import React from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { useLocation } from 'react-router-dom';
 import { Navbar, TarjetaMaestra, BarraLateral, PieChart, CirculoPorcentaje, TextSlider, BarraNombreArchivo } from '../../../routeIndex';
 import './pantallaDividida.css'
 
 const PantallaDividida = () => {
 
+  const variableParaGuardarDatos = [];
+  // variable donde guardaremos los valores de churn
+  const [churnvalues, setChurnvalues] = useState([]);
 
-  
+  // Establecemos un stado para obtener el cluster actual.
 
+  const [currentCluster, setCurrentCluster] = useState(0);
+
+  const [dataCluster, setDataCluster] = useState([]);
+
+  // obtenemos info de la view anterior
   const { state } = useLocation();
+
+  // usamos el useEffect para poder ejecutar la consulta una vez accedido a esta view
+
+    const fetchSliderValues = async () => {
+      try {
+        const response = await fetch('http://localhost:8080/get_churn_segment/');
+        const json = await response.json();
+        setChurnvalues(await json.churn_segment);
+      } catch (error) {
+        console.log("error", error);
+      }
+    }
+
+    
+
+
+
+    // creamos metodo para mandar a llamar al endpoint que nos traerá la informacion del cluster, dependiendo del cluster actual
+    const fetchClusterInfo = async (clusterNumer) => {
+      console.log(clusterNumer);
+      try {
+        const response = await fetch('http://localhost:8080/cluster/Cluster_' + clusterNumer);
+        const json = await response.json();
+        setDataCluster(await json.perfil);
+      } catch (error) {
+        console.log("error", error);
+      }
+    };
+
+    useEffect(()=> {
+      // traemos los valores del churn
+      fetchSliderValues();
+      fetchClusterInfo(currentCluster);
+      console.log(dataCluster);
+
+    },[]);
+
+
+
+
 
 
   return (
@@ -26,8 +74,15 @@ const PantallaDividida = () => {
         <div className='contenedor-general-panel'>
 
           {/* lateral navbar section */}
-          <BarraLateral Bajo={state.slidevalues[0]} Medio={state.slidevalues[1]} Alto={state.slidevalues[2]}></BarraLateral>
-          
+          <BarraLateral
+            Bajo={churnvalues[0]}
+            Medio={churnvalues[1]}
+            Alto={churnvalues[2]}
+            arrayInfo={state.clustersInfo}
+            clickBtn={setCurrentCluster}
+          >
+          </BarraLateral>
+
           {/* section for general content */}
           <div className='contendor-general-tarjeta'>
             <div className='tarjeta-maestra'>
@@ -38,11 +93,19 @@ const PantallaDividida = () => {
                 <div className='contendeor-PieChart'>
                   <div className='contenedor-PieChart-header'>
                     <p>Distribución de grupos</p>
-
                   </div>
-
                   <div className='contenedor-PieChart-chart'>
-                    <PieChart></PieChart>
+                    {
+                      (currentCluster !== -1) ?
+                        (
+                          <PieChart number={currentCluster} infoCluster={dataCluster}>
+
+                          </PieChart>
+                        ) :
+                        (
+                          <></>
+                        )
+                    }
 
                   </div>
                 </div>
@@ -52,7 +115,16 @@ const PantallaDividida = () => {
                     <p className='texto-porcentaje'> Porcentaje del dataset usado </p>
                   </div>
                   <div className='contenedor-porcentaje-graph'>
-                    <CirculoPorcentaje porcentaje={20}></CirculoPorcentaje>
+                    {
+                      (currentCluster !== -1) ?
+                        (
+                          <CirculoPorcentaje porcentaje={state.clustersInfo[currentCluster].percentage}></CirculoPorcentaje>
+                        ) :
+                        (
+                          <></>
+                        )
+                    }
+
                   </div>
 
                 </div>
@@ -60,7 +132,16 @@ const PantallaDividida = () => {
               </div>
               <div className='contenedor-izq-pantalladiv'>
 
-                <TextSlider></TextSlider>
+                {
+                  (currentCluster !== -1) ?
+                    (
+                      <TextSlider
+                        info={dataCluster}
+                        infoLateralBar={[state.clustersInfo, churnvalues]}
+                      >
+                      </TextSlider>
+                    ) : (<></>)
+                }
 
               </div>
 
@@ -74,4 +155,4 @@ const PantallaDividida = () => {
   )
 }
 
-export default PantallaDividida
+export default PantallaDividida;

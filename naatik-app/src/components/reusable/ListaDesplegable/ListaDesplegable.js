@@ -4,7 +4,7 @@ import { BotonPerfilesClusters } from '../../../routeIndex';
 import './listaDesplegable.css';
 
 
-const ListaDesplegable = ({arrContenido}) => {
+const ListaDesplegable = ({arrContenido, funcion}) => {
 
 
   return (
@@ -18,11 +18,14 @@ const ListaDesplegable = ({arrContenido}) => {
     
             <div className={ "contenido-listaDesplegable show" }>
                 <div className='container-listaDesplegable'>
-                    
-                    <BotonPerfilesClusters btnType={2} content={"Cluster 1"} />
-                    <BotonPerfilesClusters btnType={2} content={"Cluster 1"} />
-                    <BotonPerfilesClusters btnType={2} content={"Cluster 1"} />
-                    <BotonPerfilesClusters btnType={2} content={"Cluster 1"} />
+
+                    {
+                        arrContenido.map((btn,key) => {
+                            return(
+                                <BotonPerfilesClusters btnType={2} type={2} idBtn={key} content={btn.name} evento={funcion} key={key} />
+                            )
+                        })
+                    }
 
                 </div>
         

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { Navbar, TarjetaMaestra, BarraLateral, SliderMultipleIndex, BarraProbAbandono, BotonSubir, BarraNombreArchivo } from '../../../routeIndex';
 
@@ -9,7 +9,46 @@ const PanelVisualizacion = () => {
 
   const navigate = useNavigate();
   const [sliderValue, setSliderValue] = useState([25, 50, 80]);
+  const [grupsList, setgrupsList] = useState([]);
 
+  const [currentCluster, setCurrentCluster] = useState(0);
+
+
+  const grupsListDummie = [
+    {
+      "name":"uno",
+      "percentage": 20
+    }, 
+    {
+      "name":"dos", 
+      "percentage": 30
+    },
+    {
+      "name":"tres",
+      "percentage": 50
+    }
+  ];
+
+  // conectamos endpoint que nos dará la lista de clusters/grupos calculados.
+  // usamos el useEffect para poder ejecutar la consulta una vez accedido a esta view
+  useEffect(() => {
+
+    const fetchDataInfo = async() => {
+      try{
+        const response = await fetch('http://localhost:8080/get_grupo_list/');
+        const json = await response.json();
+        setgrupsList(await json.grupo);
+      }catch(error){
+        console.log("error",error);
+      }
+    }
+
+    fetchDataInfo();
+
+  },[]);
+
+
+  // funcion para setear los parametros de porcentaje de churn en el backend
   const handleSetParams = () => {
     fetch('http://localhost:8080/set_churn_segment/' + sliderValue[0] + '/' + sliderValue[1] + '/' + sliderValue[2])
       .then((res) => res.json())
@@ -18,10 +57,15 @@ const PanelVisualizacion = () => {
         navigate('/PantallaDividida',
         {
           state: {
-            slidevalues: sliderValue
+            clustersInfo: grupsListDummie
           }
         });
       });
+  };
+
+
+  const handleClickBtnClusters = (e) => {
+    console.log(e);
   };
 
   return (
@@ -39,7 +83,14 @@ const PanelVisualizacion = () => {
         <div className='contenedor-general-panel'>
 
           {/* lateral navbar section */}
-          <BarraLateral Bajo={sliderValue[0]} Medio={sliderValue[1]} Alto={sliderValue[2]} ></BarraLateral>
+          <BarraLateral 
+            Bajo={sliderValue[0]} 
+            Medio={sliderValue[1]} 
+            Alto={sliderValue[2]} 
+            arrayInfo={grupsListDummie}  
+            clickBtn={setCurrentCluster}
+            >  
+            </BarraLateral>
 
           {/* section for general content */}
           <div className='contendor-general-tarjeta'>

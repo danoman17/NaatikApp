@@ -12,14 +12,20 @@ import {
 import { useNavigate } from "react-router-dom";
 
 const TextSlider = ({ info, infoLateralBar }) => {
+
   const navigate = useNavigate();
   const data = [];
 
-  const goToPerfil = () => {
+  const goToPerfil = (e) => {
+    e.preventDefault();
+    const clusterPerfil = e.target.getAttribute('a-key');
     navigate("/PantallaPerfil", {
       state: {
         clusterInfo: infoLateralBar[0],
         churns: infoLateralBar[1],
+        dataCluster: info[clusterPerfil],
+        index: clusterPerfil
+
       },
     });
   };
@@ -95,7 +101,7 @@ const TextSlider = ({ info, infoLateralBar }) => {
               }
             </div>
             <div className="parte-abajo">
-              <Button colorScheme="green" onClick={goToPerfil}>
+              <Button colorScheme="green" onClick={goToPerfil} a-key={0}>
                 Ver más
               </Button>
             </div>
@@ -113,7 +119,7 @@ const TextSlider = ({ info, infoLateralBar }) => {
               }
             </div>
             <div className="parte-abajo">
-              <Button colorScheme="green" onClick={goToPerfil}>
+              <Button colorScheme="green" onClick={goToPerfil} a-key={1}>
                 Ver más
               </Button>
             </div>
@@ -131,7 +137,7 @@ const TextSlider = ({ info, infoLateralBar }) => {
               }
             </div>
             <div className="parte-abajo">
-              <Button colorScheme="green" onClick={goToPerfil}>
+              <Button colorScheme="green" onClick={goToPerfil} a-key={2}>
                 Ver más
               </Button>
             </div>
@@ -149,7 +155,7 @@ const TextSlider = ({ info, infoLateralBar }) => {
               }
             </div>
             <div className="parte-abajo">
-              <Button colorScheme="green" onClick={goToPerfil}>
+              <Button colorScheme="green" onClick={goToPerfil} a-key={3}>
                 Ver más
               </Button>
             </div>

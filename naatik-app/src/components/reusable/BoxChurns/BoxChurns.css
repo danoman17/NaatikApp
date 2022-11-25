@@ -41,11 +41,17 @@
 
 }
 
+.contenedor-general-box .contenedor-porcentajes .porcentaje-normal {
+    color: #E34956;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+}
 .contenedor-general-box .contenedor-porcentajes .porcentaje-baja {
 
     color: #70AE47;
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 500;
 }
 
@@ -53,7 +59,7 @@
 .contenedor-general-box .contenedor-porcentajes .porcentaje-media {
     color: #EE7D30;
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 500;
 
 }
@@ -61,7 +67,7 @@
 .contenedor-general-box .contenedor-porcentajes .porcentaje-alta {
     color: #982B52;
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 500;
 
 }

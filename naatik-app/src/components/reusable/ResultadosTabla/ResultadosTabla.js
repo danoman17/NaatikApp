@@ -1,65 +1,45 @@
 import React from 'react'
 import './ResultadosTabla.css'
-const ResultadosTabla = () => {
-  return (
-    <>
-        <div className='contenedor-general-resultados-tabla'>
+const ResultadosTabla = ({ info }) => {
 
-            
-            <div className='contenedor-titulo-contenedor'> 
-                <p> Lines </p>
-            </div>
-                
-            <div className='show-results-summary-table'>
-                <table className='show-results-table'>
-                    <thead className='show-results-table-head'>
-                        <tr>
-                            <th> Dato1 </th>
-                            <th> Dato2 </th>
-                            <th> Dato3 </th>
-                            <th> Dato4 </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                                    
-                            <td className='show-results-table-body-td'> cantidad </td>
-                            <td className='show-results-table-body-td'> cantidad </td>
-                            <td className='show-results-table-body-td'> cantidad </td>
-                            <td className='show-results-table-body-td'> cantidad </td>
+
+
+    return (
+        <>
+            <div className='contenedor-general-resultados-tabla'>
+
+
+                <div className='contenedor-titulo-contenedor'>
+                    <p> Lines </p>
+                </div>
+
+                <div className='show-results-summary-table'>
+                    <table className='show-results-table'>
+                        <thead className='show-results-table-head'>
+                            <tr>
+                                <th> {info[0].type} </th>
+                                <th> {info[1].type} </th>
+                                <th> {info[2].type} </th>
+                                <th> SUM_LINES </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+
+                                <td className='show-results-table-body-td'> {(info[0].amount).toFixed(2)} </td>
+                                <td className='show-results-table-body-td'> {(info[1].amount).toFixed(2)} </td>
+                                <td className='show-results-table-body-td'> {(info[2].amount).toFixed(2)} </td>
+                                <td className='show-results-table-body-td'> { (info[0].amount + info[1].amount +info[2].amount).toFixed(2) } </td>
+
+                            </tr>
                             
-                        </tr>
-                        <tr>
-                                    
-                                    <td className='show-results-table-body-td'> cantidad </td>
-                                    <td className='show-results-table-body-td'> cantidad </td>
-                                    <td className='show-results-table-body-td'> cantidad </td>
-                                    <td className='show-results-table-body-td'> cantidad </td>
-                                    
-                                </tr>
-                                <tr>
-                                    
-                                    <td className='show-results-table-body-td'> cantidad </td>
-                                    <td className='show-results-table-body-td'> cantidad </td>
-                                    <td className='show-results-table-body-td'> cantidad </td>
-                                    <td className='show-results-table-body-td'> cantidad </td>
-                                    
-                                </tr>
-                                <tr>
-                                    
-                                    <td className='show-results-table-body-td'> cantidad </td>
-                                    <td className='show-results-table-body-td'> cantidad </td>
-                                    <td className='show-results-table-body-td'> cantidad </td>
-                                    <td className='show-results-table-body-td'> cantidad </td>
-                                    
-                                </tr>
-                    </tbody>
-                </table>
-            </div>
+                        </tbody>
+                    </table>
+                </div>
 
-        </div>
-    </>
-  )
+            </div>
+        </>
+    )
 }
 
 export default ResultadosTabla;

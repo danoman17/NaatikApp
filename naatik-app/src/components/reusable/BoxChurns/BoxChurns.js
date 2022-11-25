@@ -12,8 +12,9 @@ const BoxChurns = ({BajoEnd, MedEnd, AltoEnd}) => {
             </button>
 
             <div className='contenedor-porcentajes'>
-                <p className="porcentaje-baja"> 0% - {BajoEnd}%</p>
-                <p className="porcentaje-media"> {BajoEnd}% - {MedEnd}%</p>
+                <p className="porcentaje-normal"> 0% - {BajoEnd}%</p>
+                <p className="porcentaje-baja"> {BajoEnd} - {MedEnd}%</p>
+                <p className="porcentaje-media"> {MedEnd}% - {AltoEnd}%</p>
                 <p className="porcentaje-alta"> {AltoEnd}% - 100%</p>
 
             </div>

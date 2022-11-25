@@ -50,11 +50,25 @@
     font-size: 1.6rem;
 }
 
-.txt-header-green {
+.txt-header-percentages {
     margin-left: 10px;
-    color: #70AE47;
     font-size: 1.6rem;
     font-weight: bolder;
+}
+
+.normal {
+    color: #E34956;
+}
+
+.bajo {
+    color: #70AE47;
+}
+.medio {
+    color: #EE7D30;
+}
+
+.alto {
+    color: #982B52;
 }
 
 .contenedor-BillAmount-HyM{

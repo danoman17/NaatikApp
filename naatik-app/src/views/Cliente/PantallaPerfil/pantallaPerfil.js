@@ -10,6 +10,25 @@ const PantallaPerfil = () => {
   
   const { state } = useLocation();
   
+  const clusterSubGroupData = state.dataCluster; 
+  const index = state.index;
+  const keys = {
+    0:["Normal","normal"],
+    1:["Baja", "bajo"],
+    2:["Media","medio"],
+    3:["Alta","alto"]
+  }
+
+  const keysPercentages = {
+    0:[0,state.churns[0]*100 ],
+    1:[state.churns[0]*100, state.churns[1]*100],
+    2:[state.churns[1]*100, state.churns[2]*100],
+    3:[state.churns[2]*100, 100]
+  }
+
+  // console.log(state.dataCluster);
+  // console.log(state.index);
+
 
   
   return (
@@ -46,11 +65,10 @@ const PantallaPerfil = () => {
               {/* we can add components here.... */}
 
 
-
               <div className='contenedor-texto-header'>
                 <div className='txt-header'>
-                  <p className='txt-header-p'> Subgrupo con probabilidad baja: </p>
-                  <p className='txt-header-green'> ?% - ?% </p>
+                  <p className='txt-header-p'> Subgrupo con probabilidad {keys[index][0]}: </p>
+                  <p className={`txt-header-percentages ${keys[index][1]}`}> { keysPercentages[index][0] }% - {keysPercentages[index][1]}% </p>
                 </div>
               </div>
 
@@ -61,7 +79,7 @@ const PantallaPerfil = () => {
                   </p>
                 </div>
                 <div className='contenido-contenedor-BillAmount-HyM'> 
-                  <ShowAmount Label={'Total de Factura'} Amount={'123000'}>
+                  <ShowAmount Label={'Total de Factura'} Amount={clusterSubGroupData["bill amount"].toFixed(2)}>
                   </ShowAmount> 
                 </div>
               </div>
@@ -70,7 +88,9 @@ const PantallaPerfil = () => {
 
               <div className='contenedor-TableLines'>
 
-                <ResultadosTabla>
+                <ResultadosTabla 
+                  info={clusterSubGroupData.lines}
+                >
 
                 </ResultadosTabla>
               </div>
@@ -84,7 +104,7 @@ const PantallaPerfil = () => {
                   </p>
                 </div>
                 <div className='contenido-contenedor-GananciaLinea'>
-                  <ShowAmount Label={'Ganancias de Linea'} Amount={'199999'}></ShowAmount>
+                  <ShowAmount Label={'Ganancias de Linea'} Amount={(clusterSubGroupData.revenues).toFixed(2)}></ShowAmount>
                 </div>
 
               </div>

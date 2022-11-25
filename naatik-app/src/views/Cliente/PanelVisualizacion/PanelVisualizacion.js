@@ -63,11 +63,6 @@ const PanelVisualizacion = () => {
       });
   };
 
-
-  const handleClickBtnClusters = (e) => {
-    console.log(e);
-  };
-
   return (
     <>
       {/* Navbar section */}

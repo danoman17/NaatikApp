@@ -70,9 +70,9 @@ const PantallaDividida = () => {
         <div className="contenedor-general-panel">
           {/* lateral navbar section */}
           <BarraLateral
-            Bajo={churnvalues[0]*100}
-            Medio={churnvalues[1]*100}
-            Alto={churnvalues[2]*100}
+            Bajo={(churnvalues[0]*100).toFixed(0)}
+            Medio={(churnvalues[1]*100).toFixed(0)}
+            Alto={(churnvalues[2]*100).toFixed(0)}
             arrayInfo={state.clustersInfo}
             clickBtn={setCurrentCluster}
           ></BarraLateral>

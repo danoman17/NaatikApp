@@ -48,9 +48,9 @@ const PantallaPerfil = () => {
 
           {/* lateral navbar section */}
           <BarraLateral
-            Bajo={state.churns[0]}
-            Medio={state.churns[1]}
-            Alto={state.churns[2]}
+            Bajo={(state.churns[0]*100).toFixed(0)}
+            Medio={(state.churns[1]*100).toFixed(0)}
+            Alto={(state.churns[2]*100).toFixed(0)}
             arrayInfo={state.clusterInfo}
             clickBtn={setClusterId}
 

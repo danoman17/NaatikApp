@@ -5,11 +5,11 @@
     text-align: center;
     position: relative;
 }
-  
+
 #input-file-upload {
     display: none;
 }
-  
+
 #label-file-upload {
     height: 100%;
     display: flex;
@@ -43,7 +43,7 @@
     font-size: 1.5rem;
     font-weight: 600;
 }
-  
+
 .upload-button {
     cursor: pointer;
     padding: 0.25rem;
@@ -67,4 +67,4 @@
     right: 0px;
     bottom: 0px;
     left: 0px;
-  }
+}

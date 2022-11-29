@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import {  Home, TemporalHome, Template, UploadFiles, PanelVisualizacion, CirculoPorcentaje, BarraProbAbandono, ShowAmount, TextSlider, PantallaDividida, PantallaPerfil, BarChart } from './routeIndex.js'
+import {  Home, TemporalHome, Template, UploadFiles, PanelVisualizacion, CirculoPorcentaje, BarraProbAbandono, ShowAmount, TextSlider, PantallaDividida, PantallaPerfil, BarChart, DownloadJson } from './routeIndex.js'
 
 
 
@@ -34,11 +34,7 @@ const App = () => {
 
                 <Route path='BarChart' element={<BarChart/>} />
 
-                
-
-                
-                
-                
+                <Route path='downloadJson' element={<DownloadJson/>}/>  
             </Routes>
         </Router>
 

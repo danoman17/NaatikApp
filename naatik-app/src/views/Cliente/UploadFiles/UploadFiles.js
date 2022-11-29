@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navbar, TarjetaMaestra, DragDropFile, BotonSubir } from '../../../routeIndex.js';
+import { Navbar, TarjetaMaestra, DragDropFile } from '../../../routeIndex.js';
 
 import './UploadFiles.css';
 

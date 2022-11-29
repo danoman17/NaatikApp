@@ -8,6 +8,8 @@ export const TemporalHome = () => {
     <>
 
       <h1>Componentes Iniciales</h1>
+
+
       <Link to='/home' className='link_tmp'>Home</Link>
       <Link to='/template' className='link_tmp'>template</Link>
       <Link to='/CirculoPorcentaje' className='link_tmp'>CirculoPorcentaje</Link>
@@ -16,10 +18,8 @@ export const TemporalHome = () => {
       <Link to='/TextSlider' className='link_tmp'>TextSlider</Link>
       <Link to='/PantallaDividida' className='link_tmp'>PantallaDividida</Link>
       <Link to='/PantallaPerfil' className='link_tmp'>PantallaPerfil</Link>
+      <Link to='/downloadJson' className='link_tmp'>Generate Json</Link>
 
-      
-      
-      
     </>
   )
 }

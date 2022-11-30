@@ -70,11 +70,14 @@ const PantallaDividida = () => {
                 <div className="contenedor-general-panel">
                     {/* lateral navbar section */}
                     <BarraLateral
+                        arrayInfo={state.clustersInfo}
+                        clickBtn={setCurrentCluster}
                         Bajo={(churnvalues[0] * 100).toFixed(0)}
                         Medio={(churnvalues[1] * 100).toFixed(0)}
                         Alto={(churnvalues[2] * 100).toFixed(0)}
-                        arrayInfo={state.clustersInfo}
-                        clickBtn={setCurrentCluster}
+                        btnActive={true}
+                        warningMessage={""}
+                        activeBtn={currentCluster}
                     ></BarraLateral>
 
                     {/* section for general content */}

@@ -3,7 +3,7 @@ import { ListaDesplegable, BoxChurns } from '../../../routeIndex';
 import './BarraLateral.css'
 
 
-const BarraLateral = ({ arrayInfo, clickBtn, Bajo, Medio, Alto, btnActive, warningMessage }) => {
+const BarraLateral = ({ arrayInfo, clickBtn, Bajo, Medio, Alto, btnActive, warningMessage, activeBtn=0 }) => {
     return (
         <>
             <div className='contenedor-general-barra-lateral'>
@@ -13,6 +13,7 @@ const BarraLateral = ({ arrayInfo, clickBtn, Bajo, Medio, Alto, btnActive, warni
                     funcion={clickBtn}
                     buttonAction={btnActive}
                     warMess={warningMessage}
+                    currentActive={activeBtn}
                 >
                 </ListaDesplegable>
 

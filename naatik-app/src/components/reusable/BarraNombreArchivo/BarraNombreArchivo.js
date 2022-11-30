@@ -1,7 +1,7 @@
 import React from 'react';
 import { AiFillFolder } from "react-icons/ai";
 import './BarraNombreArchivo.css';
-const BarraNombreArchivo = () => {
+const BarraNombreArchivo = ({fileName="file.csv"}) => {
   return (
     <>
         <div className='contenedor-general-barraFileName'>
@@ -11,7 +11,7 @@ const BarraNombreArchivo = () => {
             </div>
             <div className='contenedor-filename'>
                 
-                <p> File.csv </p>
+                <p> {fileName} </p>
             </div>
         </div>
     </>

@@ -8,10 +8,10 @@ const UploadFiles = () => {
 
   return (
     <>
-        <Navbar></Navbar>
-        <TarjetaMaestra>
-            <DragDropFile/>
-        </TarjetaMaestra>
+      <Navbar></Navbar>
+      <TarjetaMaestra>
+        <DragDropFile />
+      </TarjetaMaestra>
     </>
   )
 }

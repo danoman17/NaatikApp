@@ -10,6 +10,18 @@
 
 }
 
+.porcentageAbandojoNormal{
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #E34956;
+}
+
 .porcentageAbandojoBajo{
     height: 60%;
     display: flex;

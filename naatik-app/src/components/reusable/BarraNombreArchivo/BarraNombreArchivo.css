@@ -5,10 +5,11 @@
     padding: 5px;
     color: #000;
     font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    font-size: 1.3rem;
+    font-weight: 400;
+    font-size: 1.5rem;
     display: flex;
     flex-direction: row;
+    cursor:default;
 
 }
 

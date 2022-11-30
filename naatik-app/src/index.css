@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,600;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,600;1,700&display=swap');
+
 
 * {
   margin: 0;
@@ -10,14 +12,4 @@
   list-style: none;
   text-decoration: none;
   font-family: Dosis;
-}
-
-:root{
-  --blanco: #FFFFFF;
-  --negro: #000000;
-  --azulCielo: #50C7F1;
-  --rojo: #FF0000;
-  --gris: #949494;
-  --turquesa: #1B4858;
-  --verde: #269D24;
 }

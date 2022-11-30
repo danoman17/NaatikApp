@@ -1,9 +1,11 @@
 import React, { useRef, useState } from 'react'
 import Papa from 'papaparse';
 import { Spinner } from '@chakra-ui/react'
-import { AiOutlineUpload } from "react-icons/ai";
+import { AiOutlineUpload, AiFillFileAdd } from "react-icons/ai";
 import { BotonSubir } from '../../../routeIndex.js';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+
 
 
 import './DragDropFile.css'
@@ -12,10 +14,11 @@ import './DragDropFile.css'
 
 const allowedExtensions = ["csv"];
 let FileName = "";
+let FileNameCompleto = "";
 let nameDoc = "";
 
 const DragDropFile = ({ active = true }) => {
-    // seteamos un state para poder realizar una animacion de carga al momento de preocesar el archivo.
+
     const navigate = useNavigate();
     const arrFinal = { "rows": [] };
     const arrTest = {
@@ -31,13 +34,11 @@ const DragDropFile = ({ active = true }) => {
     const [loading, setLoading] = useState(false);
     const [dragActive, setDragActive] = useState(false);
     const [fileName, setFileName] = useState(false);
-    const [error, setError] = useState("");
     const [file, setFile] = useState("");
     const [valid, setValid] = useState(false);
 
 
     const handleFileChange = (e) => {
-        setError("");
         setFileName(true);
         // Check if user has entered the file
         if (e.target.files.length) {
@@ -46,6 +47,8 @@ const DragDropFile = ({ active = true }) => {
             const inputFile = e.target.files[0];
             const name = e.target.files[0]["name"];
 
+            // we asssign the variable to get the full name of the file in the next view
+            FileNameCompleto = name;
             FileName = name.split(".")[0];
 
             // Check the file extensions, if it not
@@ -54,8 +57,17 @@ const DragDropFile = ({ active = true }) => {
             const fileExtension = inputFile?.type.split("/")[1];
             if (!allowedExtensions.includes(fileExtension)) {
                 setValid(false);
-                setError("Please input a csv file");
-                console.log(error);
+
+                toast.error('Please input a csv file only', {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: true,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
                 return;
             }
 
@@ -67,11 +79,86 @@ const DragDropFile = ({ active = true }) => {
         }
     };
 
-    const handleParse = () => {
+    // triggers when file is dropped
+    const handleDrop = function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        setDragActive(false);
+
+        setFileName(true);
+        // Check if user has entered the file
+        if (e.dataTransfer.files.length) {
+
+
+            const inputFile = e.dataTransfer.files[0];
+            const name = e.dataTransfer.files[0]["name"];
+
+            // we asssign the variable to get the full name of the file in the next view
+            FileNameCompleto = name;
+
+            FileName = name.split(".")[0];
+
+            // Check the file extensions, if it not
+            // included in the allowed extensions
+            // we show the error
+            const fileExtension = inputFile?.type.split("/")[1];
+            if (!allowedExtensions.includes(fileExtension)) {
+                setValid(false);
+                toast.error('Please input a csv file only', {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: true,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
+                return;
+            }
+
+            setValid(true);
+            nameDoc = name;
+
+            // If input type is correct set the state
+            setFile(inputFile);
+        }
+
+    };
+
+    // handle drag events
+    const handleDrag = function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (e.type === "dragenter" || e.type === "dragover") {
+            setDragActive(true);
+        } else if (e.type === "dragleave") {
+            setDragActive(false);
+        }
+    };
+
+
+    
+    const handleParse = (e) => {
+
+        e.preventDefault();
 
         // If user clicks the parse button without
         // a file we show a error
-        if (!file) return setError("Enter a valid file");
+        if (!file) {
+            toast.warn('Enter a valid File!', {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+            return;
+        }
 
         // Initialize a reader which allows user
         // to read any file or blob.
@@ -105,9 +192,16 @@ const DragDropFile = ({ active = true }) => {
                     .then((data) => {
                         console.log("success", data);
 
-                        // setteamos en false para poder guardar animación.
+                        // setteamos en false para poder guardar animación
                         setLoading(false)
-                        navigate('/panel_visuzalizacion');
+
+                        // once finished the process, we navigate to the next view
+                        navigate('/panel_visuzalizacion',
+                            {
+                                state: {
+                                    fileName: FileNameCompleto
+                                }
+                            });
 
                     })
                     .catch((error) => {
@@ -124,36 +218,11 @@ const DragDropFile = ({ active = true }) => {
                 link.click();
                 setLoading(false);
             }
-
-
-
         };
         reader.readAsText(file);
 
     };
 
-    // handle drag events
-    const handleDrag = function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        if (e.type === "dragenter" || e.type === "dragover") {
-            setDragActive(true);
-        } else if (e.type === "dragleave") {
-            setDragActive(false);
-        }
-    };
-
-
-    // triggers when file is dropped
-    const handleDrop = function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        setDragActive(false);
-        if (e.dataTransfer.files && e.dataTransfer.files[0]) {
-            // at least one file has been dropped so do something
-            // handleFiles(e.dataTransfer.files[0]);
-        }
-    };
 
     // triggers the input when the button is clicked
     const onButtonClick = () => {
@@ -172,21 +241,39 @@ const DragDropFile = ({ active = true }) => {
                         (!loading) ?
                             (
 
-                                <div id='contenedor-texto'>
-                                    <p>Arrastre el documento o</p>
-                                    <button className="upload-button" onClick={onButtonClick}>Seleecione un archivo</button>
-                                    <AiOutlineUpload size={"80px"}></AiOutlineUpload>
+                                <>
+                                    <div id='contenedor-texto'>
+                                        <p>Arrastre y suelte documentos aquí</p>
+                                        <p> o </p>
+
+                                        <button className="upload-button" onClick={onButtonClick}>
+                                            <div className='contenedor-izq-upload-button'>
+                                                <AiFillFileAdd size={"30px"}></AiFillFileAdd>
+                                            </div>
+                                            <div className='contenedor-der-upload-button'>
+                                                Seleecione un archivo
+                                            </div>
+
+                                        </button>
+                                    </div>
+
                                     {
                                         (fileName && valid) ?
                                             (
-                                                <p> Archivo cargado: {nameDoc} </p>
+                                                <div className='contenedor-general-file-name'>
+                                                    <div className='contenedor-parte-arriba-file-name'>
+                                                        <p className='title-card-file-name'>Archivo cargado:</p>
+                                                    </div>
+                                                    <div className='contenedor-parte-abajo-file-name'>
+                                                        <p className='content-card-file-name'> {nameDoc} </p>
+                                                    </div>
+                                                </div>
                                             ) :
                                             (
                                                 <></>
                                             )
                                     }
-
-                                </div>
+                                </>
                             ) :
                             (
                                 <Spinner

@@ -143,6 +143,7 @@ const PantallaDividida = () => {
                                                 info={dataCluster}
                                                 infoLateralBar={[state.clustersInfo, churnvalues]}
                                                 fileName = {state.fileName}
+                                                currentClusterIndex={currentCluster}
                                             ></TextSlider>
                                         ) :
                                         (

@@ -7,21 +7,13 @@ const PantallaPerfil = () => {
 
     const { state } = useLocation();
 
+    // console.log(state.clusterInfo);
+    // console.log(state.churns);
+    // console.log(state.dataCluster);
+    // console.log(state.index);
+    // console.log(state.fileName);
 
-    const index = 0;
-    const keys = {
-        0: ["Normal", "normal"],
-        1: ["Baja", "bajo"],
-        2: ["Media", "medio"],
-        3: ["Alta", "alto"]
-    }
 
-    const keysPercentages = {
-        0: [0, state.churns[0] * 100],
-        1: [state.churns[0] * 100, state.churns[1] * 100],
-        2: [state.churns[1] * 100, state.churns[2] * 100],
-        3: [state.churns[2] * 100, 100]
-    }
 
     return (
         <>
@@ -58,7 +50,11 @@ const PantallaPerfil = () => {
                             {/* we can add components here.... */}
 
 
-                            <ProfileTextSlider>
+                            <ProfileTextSlider
+                                clusterNames={state.clusterInfo}
+                                porcentajes={state.churns}
+                                clusterNo={state.currentClusterIndexFinal}
+                            >
 
                             </ProfileTextSlider>
 

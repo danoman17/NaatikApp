@@ -11,7 +11,7 @@ import {
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 
-const TextSlider = ({ info, infoLateralBar, fileName="" }) => {
+const TextSlider = ({ info, infoLateralBar, fileName="", currentClusterIndex}) => {
 
     const navigate = useNavigate();
     const data = [];
@@ -26,7 +26,8 @@ const TextSlider = ({ info, infoLateralBar, fileName="" }) => {
                 churns: infoLateralBar[1],
                 dataCluster: info[clusterPerfil],
                 index: clusterPerfil,
-                fileName: fileName
+                fileName: fileName,
+                currentClusterIndexFinal: currentClusterIndex
 
             },
         });

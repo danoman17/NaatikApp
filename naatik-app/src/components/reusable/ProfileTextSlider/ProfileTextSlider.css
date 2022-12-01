@@ -1,4 +1,4 @@
-.btn-textslider-1 {
+.btn-textslider-1-2 {
     min-width: 150px;
     border-radius: 10px;
     background: #E34956;
@@ -7,7 +7,7 @@
     margin: 0 5px 0 5px;
 
 }
-.btn-textslider-2 {
+.btn-textslider-2-2 {
     min-width: 150px;
     border-radius: 10px;
     background: #70AE47;
@@ -16,7 +16,7 @@
 
 }
 
-.btn-textslider-3 {
+.btn-textslider-3-2 {
     min-width: 150px;
     border-radius: 10px;
     background: #EE7D30;
@@ -25,7 +25,7 @@
 
 }
 
-.btn-textslider-4 {
+.btn-textslider-4-2 {
     min-width: 150px;
     border-radius: 10px;
     background: #982B52;
@@ -114,7 +114,7 @@
     height: 90%;
     width: 100%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
 }
 

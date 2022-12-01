@@ -4,7 +4,7 @@ import { BotonPerfilesClusters } from '../../../routeIndex';
 import './listaDesplegable.css';
 
 
-const ListaDesplegable = ({ arrContenido, funcion, buttonAction=true, warMess }) => {
+const ListaDesplegable = ({ arrContenido, funcion, buttonAction=true, warMess, currentActive }) => {
 
 
     return (
@@ -21,18 +21,37 @@ const ListaDesplegable = ({ arrContenido, funcion, buttonAction=true, warMess })
 
                         {
                             arrContenido.map((btn, key) => {
-                                return (
-                                    <BotonPerfilesClusters 
-                                        btnType={2} 
-                                        type={2} 
-                                        idBtn={key} 
-                                        content={btn.name} 
-                                        evento={funcion} 
-                                        isDoingSomthing={buttonAction}
-                                        warning={warMess}
-                                        key={key} 
-                                    />
-                                )
+
+                                if(key === currentActive){
+
+                                    return (
+                                        <BotonPerfilesClusters 
+                                            btnType={2} 
+                                            type={2} 
+                                            idBtn={key} 
+                                            content={btn.name} 
+                                            evento={funcion} 
+                                            isDoingSomthing={buttonAction}
+                                            warning={warMess}
+                                            key={key} 
+                                            isSelected={true}
+                                        />
+                                    )
+                                }else {
+                                    return (
+                                        <BotonPerfilesClusters 
+                                            btnType={2} 
+                                            type={2} 
+                                            idBtn={key} 
+                                            content={btn.name} 
+                                            evento={funcion} 
+                                            isDoingSomthing={buttonAction}
+                                            warning={warMess}
+                                            key={key}
+                                            isSelected={false} 
+                                        />
+                                    )
+                                }
                             })
                         }
 

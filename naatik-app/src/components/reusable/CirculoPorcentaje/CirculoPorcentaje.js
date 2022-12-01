@@ -8,7 +8,7 @@ function CirculoPorcentaje({porcentaje}) {
     return (
         <div className='contenedor-general-circular-progress'>
 
-              <CircularProgress  value={porcentaje} color='#FE5694' size='120px'  getValueText>
+              <CircularProgress  value={(porcentaje*100).toFixed(2)} color='#FE5694' size='120px'  getValueText>
                 <CircularProgressLabel color='#FE5694' id='label-circularProgress'> {porcentaje}%</CircularProgressLabel>
               </CircularProgress>
 

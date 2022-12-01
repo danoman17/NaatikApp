@@ -29,3 +29,4 @@ export {default as ShowAmount} from './components/reusable/ShowAmount/ShowAmount
 export {default as TextSlider} from './components/reusable/TextSlider/TextSlider.js';
 export {default as BarChart} from './components/reusable/BarChart/BarChart.js';
 export {default as BarraNombreArchivo} from './components/reusable/BarraNombreArchivo/BarraNombreArchivo.js';
+export {default as ProfileTextSlider} from './components/reusable/ProfileTextSlider/ProfileTextSlider.js';

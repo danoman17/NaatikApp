@@ -6,7 +6,7 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    padding: 10px;
+    padding: 3px;
     border-radius: 10px;
     box-shadow: 5px 6px 38px -10px rgba(0,0,0,0.75);
     -webkit-box-shadow: 5px 6px 38px -10px rgba(0,0,0,0.75);
@@ -16,18 +16,17 @@
 
 .contenedor-general-box .btn-header-box {
     width: 95%;
-    height: 10%;
-    min-height: 50px;
+    min-height: 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-direction: row;
     padding: 10px;
-    background: #ffff;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
+    background: transparent;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
     font-size: 1rem;
     border-radius: 10px;
+    cursor: default;
 }
 
 .contenedor-general-box .contenedor-porcentajes {
@@ -41,16 +40,75 @@
 
 }
 
-.contenedor-general-box .contenedor-porcentajes .porcentaje-normal {
+.contenedor-general-box .contenedor-porcentajes .contenedor-porcentaje {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.contenedor-general-box .contenedor-porcentajes .contenedor-porcentaje .contenedor-porcentaje-izq{
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 15%;
+
+}
+
+.contenedor-general-box .contenedor-porcentajes .contenedor-porcentaje .contenedor-porcentaje-izq .incial-contenedor-porcentaje-permanente{
     color: #E34956;
     font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+
+}
+
+.contenedor-general-box .contenedor-porcentajes .contenedor-porcentaje .contenedor-porcentaje-izq .incial-contenedor-porcentaje-bajo{
+    color: #70AE47;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.contenedor-general-box .contenedor-porcentajes .contenedor-porcentaje .contenedor-porcentaje-izq .incial-contenedor-porcentaje-medio{
+
+    color: #EE7D30;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+
+}
+
+.contenedor-general-box .contenedor-porcentajes .contenedor-porcentaje .contenedor-porcentaje-izq .incial-contenedor-porcentaje-alto{
+
+    color: #982B52;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+
+}
+
+
+
+.contenedor-general-box .contenedor-porcentajes .contenedor-porcentaje .contenedor-porcentaje-der{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 85%;
+    padding-left: 10px;
+}
+
+.contenedor-general-box .contenedor-porcentajes .porcentaje-normal {
+    color: #E34956;
+    font-family: 'Inter', sans-serif;
     font-size: 1rem;
     font-weight: 500;
 }
 .contenedor-general-box .contenedor-porcentajes .porcentaje-baja {
 
     color: #70AE47;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 1rem;
     font-weight: 500;
 }
@@ -58,7 +116,7 @@
 
 .contenedor-general-box .contenedor-porcentajes .porcentaje-media {
     color: #EE7D30;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 1rem;
     font-weight: 500;
 
@@ -66,7 +124,7 @@
 
 .contenedor-general-box .contenedor-porcentajes .porcentaje-alta {
     color: #982B52;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 1rem;
     font-weight: 500;
 

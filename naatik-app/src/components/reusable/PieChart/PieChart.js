@@ -33,7 +33,7 @@ const PieChart = ({infoCluster}) => {
 
   function bringGroupName(index) {
       if(index === 0){
-        return "Normal";
+        return "Permanente";
       } 
       if(index === 1){
         return "Bajo";
@@ -58,7 +58,7 @@ const PieChart = ({infoCluster}) => {
       arrayAmount.push(cluster.amount);
     });
 
-    arrayAmount.map(cantidad=>{
+    arrayAmount.map((cantidad)=>{
       sumaTotal = cantidad + sumaTotal;
     });
 

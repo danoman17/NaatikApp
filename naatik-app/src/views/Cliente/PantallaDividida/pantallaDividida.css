@@ -8,7 +8,7 @@
 }
 
 
-.contendor-general-tarjeta {
+.contendor-general-tarjeta2 {
     width: 85%;
     height: 100%;
     display: flex;
@@ -16,7 +16,7 @@
     align-items: center;
 }
 
-.contendor-general-tarjeta .tarjeta-maestra {
+.contendor-general-tarjeta2 .tarjeta-maestra {
     height: 95%;
     width: 95%;
     display: flex;
@@ -24,16 +24,39 @@
     align-items: center;
     background: #ffff;
     border-radius: 30px;
-    flex-direction: row;
+    flex-direction: column;
     box-shadow: 5px 6px 38px -10px rgba(0,0,0,0.75);
     -webkit-box-shadow: 5px 6px 38px -10px rgba(0,0,0,0.75);
     -moz-box-shadow: 5px 6px 38px -10px rgba(0,0,0,0.75);
-    flex-wrap: wrap;
+}
+
+.contendor-general-tarjeta2 .tarjeta-maestra .encabezado-tarjeta-maestra {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 9%;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    background: #0C5380;
+    border-radius: 30px 30px 0 0;
+    color: #fff;
+}
+
+.contendor-general-tarjeta2 .tarjeta-maestra .contenedor-general-mitades {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 91%;
+    width: 100%;
+
 }
 
 
 
-.contendor-general-tarjeta .tarjeta-maestra .contenedor-der-pantalladiv {
+.contendor-general-tarjeta2 .tarjeta-maestra .contenedor-general-mitades .contenedor-der-pantalladiv {
     width: 50%;
     height: 100%;
     display: flex;
@@ -44,7 +67,7 @@
 }
 
 
-.contendor-general-tarjeta .tarjeta-maestra .contenedor-der-pantalladiv .contendeor-PieChart{
+.contendor-general-tarjeta2 .tarjeta-maestra .contenedor-general-mitades .contenedor-der-pantalladiv .contendeor-PieChart{
     width: 100%;
     height: 70%;
     display: flex;
@@ -53,7 +76,7 @@
     flex-direction: column;
 }
 
-.contendor-general-tarjeta .tarjeta-maestra .contenedor-der-pantalladiv .contendeor-PieChart .contenedor-PieChart-header {
+.contendor-general-tarjeta2 .tarjeta-maestra .contenedor-general-mitades .contenedor-der-pantalladiv .contendeor-PieChart .contenedor-PieChart-header {
     height: 10%;
     width: 100%;
     display: flex;
@@ -62,7 +85,7 @@
 
 }
 
-.contendor-general-tarjeta .tarjeta-maestra .contenedor-der-pantalladiv .contendeor-PieChart .contenedor-PieChart-header p{
+.contendor-general-tarjeta2 .tarjeta-maestra .contenedor-general-mitades .contenedor-der-pantalladiv .contendeor-PieChart .contenedor-PieChart-header p{
     font-family: 'Inter', sans-serif;
     font-size: 1.2rem;
     font-weight: 500;
@@ -70,7 +93,7 @@
 
 }
 
-.contendor-general-tarjeta .tarjeta-maestra .contenedor-der-pantalladiv .contendeor-PieChart .contenedor-PieChart-chart {
+.contendor-general-tarjeta2 .tarjeta-maestra .contenedor-general-mitades .contenedor-der-pantalladiv .contendeor-PieChart .contenedor-PieChart-chart {
 
     height: 90%;
     width: 100%;
@@ -81,7 +104,7 @@
 }
 
 
-.contendor-general-tarjeta .tarjeta-maestra .contenedor-der-pantalladiv .contenedor-porcentaje{
+.contendor-general-tarjeta2 .tarjeta-maestra .contenedor-general-mitades .contenedor-der-pantalladiv .contenedor-porcentaje{
     width: 80%;
     height: 30%;
     display: flex;
@@ -90,7 +113,7 @@
     flex-direction: column;
 }
 
-.contendor-general-tarjeta .tarjeta-maestra .contenedor-der-pantalladiv .contenedor-porcentaje .contenedor-porcentaje-header{
+.contendor-general-tarjeta2 .tarjeta-maestra .contenedor-general-mitades .contenedor-der-pantalladiv .contenedor-porcentaje .contenedor-porcentaje-header{
 
     width: 100%;
     height: 10%;
@@ -100,7 +123,7 @@
 
 }
 
-.contendor-general-tarjeta .tarjeta-maestra .contenedor-der-pantalladiv .contenedor-porcentaje .contenedor-porcentaje-header .texto-porcentaje{
+.contendor-general-tarjeta2 .tarjeta-maestra .contenedor-general-mitades .contenedor-der-pantalladiv .contenedor-porcentaje .contenedor-porcentaje-header .texto-porcentaje{
     font-family: 'Inter', sans-serif;
     font-size: .9rem;
     color: #6088A5;
@@ -108,12 +131,12 @@
 }
 
 
-.contendor-general-tarjeta .tarjeta-maestra .contenedor-der-pantalladiv .contenedor-porcentaje .texto-porcentaje{
+.contendor-general-tarjeta2 .tarjeta-maestra .contenedor-general-mitades .contenedor-der-pantalladiv .contenedor-porcentaje .texto-porcentaje{
     display: block;
     bottom: 10px;
 }
 
-.contendor-general-tarjeta .tarjeta-maestra .contenedor-izq-pantalladiv {
+.contendor-general-tarjeta2 .tarjeta-maestra .contenedor-general-mitades .contenedor-izq-pantalladiv {
     width: 50%;
     height: 100%;
     display: flex;

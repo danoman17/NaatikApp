@@ -12,7 +12,7 @@ import './DragDropFile.css'
 
 
 
-const allowedExtensions = ["csv"];
+const allowedExtensions = ["csv", 'vnd.ms-excel'];
 let FileName = "";
 let FileNameCompleto = "";
 let nameDoc = "";
@@ -46,15 +46,18 @@ const DragDropFile = ({ active = true }) => {
 
             const inputFile = e.target.files[0];
             const name = e.target.files[0]["name"];
+            console.log(name)
 
             // we asssign the variable to get the full name of the file in the next view
             FileNameCompleto = name;
             FileName = name.split(".")[0];
+            console.log(FileName)
 
             // Check the file extensions, if it not
             // included in the allowed extensions
             // we show the error
             const fileExtension = inputFile?.type.split("/")[1];
+            console.log(fileExtension)
             if (!allowedExtensions.includes(fileExtension)) {
                 setValid(false);
 
@@ -175,21 +178,30 @@ const DragDropFile = ({ active = true }) => {
                 header: true
             });
             const parsedData = csv?.data;
+            console.log(parsedData);
             const columns = Object.keys(parsedData[0]);
             arrFinal["rows"].push(columns);
 
             parsedData.forEach((val) => arrFinal["rows"].push(Object.values(val)));
 
             if (active) {
+                
                 fetch('http://localhost:8080/upload/' + FileName, {
+                    mode: "cors",
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
+                        // "Access-Control-Allow-Origin": "*"
+                        
                     },
-                    body: JSON.stringify(arrTest)
+                    body: JSON.stringify(arrFinal),
+                    // body: {}
+                    
                 })
                     .then((response) => response.json())
                     .then((data) => {
+
+                        
                         console.log("success", data);
 
                         // setteamos en false para poder guardar animación

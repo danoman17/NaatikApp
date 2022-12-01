@@ -3,7 +3,7 @@ import { AiOutlineProfile } from "react-icons/ai";
 import { toast } from 'react-toastify';
 import './BotonPerfilesClusters.css'
 
-const BotonPerfilesClusters = ({ btnType, type, idBtn, content = "", evento, isDoingSomthing = true, warning = "" }) => {
+const BotonPerfilesClusters = ({ btnType, type, idBtn, content = "", evento, isDoingSomthing = true, warning = "", isSelected }) => {
 
     // función con la que establecemos el estado de la variable currentCluster en la view pantallaDividida
     // es importante esta funcion ya que nos ayuda a iterar la informacion entre cada cluster/grupo.
@@ -29,12 +29,16 @@ const BotonPerfilesClusters = ({ btnType, type, idBtn, content = "", evento, isD
         console.log("Warning: ",warning);
     }
 
+    const handleDummieBtn = (e) => {
+        e.preventDefault();
+    }
+
     return (
         <>
             {
                 (btnType === 1) ?
                     (
-                        <button className='boton-general-encabezado'>
+                        <button className='boton-general-encabezado' onClick={handleDummieBtn}>
                             <div className='contenedor-interno-botones'>
                                 <p> {type === 1 ? "Clusters" : "Perfiles"} </p>
                                 <AiOutlineProfile></AiOutlineProfile>
@@ -44,11 +48,22 @@ const BotonPerfilesClusters = ({ btnType, type, idBtn, content = "", evento, isD
                     (
                         (isDoingSomthing) ?
                             (
-                                <button className='boton-general-normal' key={idBtn} onClick={handleClick}>
-                                    <div className='contenedor-interno-botones'>
-                                        <p> {content} </p>
-                                    </div>
-                                </button>
+                                (isSelected)?
+                                (
+
+                                    <button className='boton-general-normal-active' key={idBtn} onClick={handleClick}>
+                                        <div className='contenedor-interno-botones-active'>
+                                            <p> {content} </p>
+                                        </div>
+                                    </button>
+                                ):
+                                (
+                                    <button className='boton-general-normal' key={idBtn} onClick={handleClick}>
+                                        <div className='contenedor-interno-botones'>
+                                            <p> {content} </p>
+                                        </div>
+                                    </button>
+                                )
                             ):
                             (
                                 <button className='boton-general-normal-desabled' key={idBtn} onClick={handleClickWarning}>

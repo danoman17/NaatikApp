@@ -13,10 +13,12 @@ import {
 const ShowAmount = ({Label, Amount}) => {
   return (
 
-        <Stat maxW='sm' boxShadow='dark-lg' p='6' rounded='md' bg='white' overflow='hidden'>
-          <StatLabel>{Label}</StatLabel>
+        <Stat maxW='sm' boxShadow='md' p='6' rounded='md' bg='white' overflow='hidden'>
+          <StatLabel fontSize="1.5rem" borderBottom="10px">{Label}</StatLabel>
           <StatNumber>${Amount}</StatNumber>
-          <StatHelpText><StatArrow type='increase' />Sumatoria del Subgrupo/Perfil</StatHelpText>
+          <StatHelpText><StatArrow type='increase' /> 
+            Si el resultado es 0.00, quiere decir que no se encontró relacion con el dataset actual.
+          </StatHelpText>
         </Stat>
 
 

@@ -1,0 +1,148 @@
+.btn-textslider-1-2 {
+    min-width: 150px;
+    border-radius: 10px;
+    background: #E34956;
+    border: 2px solid #E34956;
+    transition: all 0.3s ease-in-out;
+    margin: 0 5px 0 5px;
+
+}
+.btn-textslider-2-2 {
+    min-width: 150px;
+    border-radius: 10px;
+    background: #70AE47;
+    border: 2px solid #70AE47;
+    margin: 0 5px 0 5px;
+
+}
+
+.btn-textslider-3-2 {
+    min-width: 150px;
+    border-radius: 10px;
+    background: #EE7D30;
+    border: 2px solid #EE7D30;
+    margin: 0 5px 0 5px;
+
+}
+
+.btn-textslider-4-2 {
+    min-width: 150px;
+    border-radius: 10px;
+    background: #982B52;
+    border: 2px solid #982B52;
+    margin: 0 5px 0 5px;
+
+}
+
+
+
+
+.txt-btn-textSlider {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.contenedor-general-resumen-profile {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+
+.contenedor-general-resumen-profile .contenedor-texto-header {
+    height: 10%;
+    min-height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0 10px 0;
+}
+
+.txt-header {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    flex-direction: row;
+    font-size: 1.6rem;
+}
+
+.txt-header-percentages {
+    margin-left: 10px;
+    font-size: 1.6rem;
+    font-weight: bolder;
+}
+
+.normal {
+    color: #E34956;
+}
+
+.bajo {
+    color: #70AE47;
+}
+.medio {
+    color: #EE7D30;
+}
+
+.alto {
+    color: #982B52;
+}
+
+
+.contenedor-general-resumen-profile .contenedor-general-img {
+    height: 100%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #D9D9D9;
+    flex-direction: column;
+    min-height: 550px;
+    margin: 20px 0 20px 0;
+    border-radius: 5px;
+}
+
+.contenedor-general-img .image-container {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-general-resumen-profile .section-btn-pdf {
+    height: 20%;
+    min-height: 80px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.btn-perfil-pdf{
+    width: 90%;
+    height: 90%;
+    background: #43AFEF;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-perfil-pdf p {
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+

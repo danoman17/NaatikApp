@@ -56,13 +56,20 @@ const PantallaDividida = () => {
         fetchClusterInfo(currentCluster);
     }, []);
 
+
+    // we use this useEffect in order to fetch data depending on currentCluster state
+    useEffect(() => {
+        fetchClusterInfo(currentCluster);
+    },[currentCluster])
+
+
     return (
         <>
             {/* Navbar section */}
             <Navbar> </Navbar>
 
             {/* name of the current file section */}
-            <BarraNombreArchivo fileName={ state.fileName } ></BarraNombreArchivo>
+            <BarraNombreArchivo fileName={state.fileName} ></BarraNombreArchivo>
 
             {/* general container for the spacework */}
             <TarjetaMaestra>
@@ -81,58 +88,69 @@ const PantallaDividida = () => {
                     ></BarraLateral>
 
                     {/* section for general content */}
-                    <div className="contendor-general-tarjeta">
+                    <div className="contendor-general-tarjeta2">
                         <div className="tarjeta-maestra">
                             {/* we can add components here.... */}
 
                             {/* title/instructions */}
-                            <div className="contenedor-der-pantalladiv">
-                                <div className="contendeor-PieChart">
-                                    <div className="contenedor-PieChart-header">
-                                        <p>Distribución de grupos</p>
-                                    </div>
-                                    <div className="contenedor-PieChart-chart">
-                                        {(currentCluster !== -1 && dataCluster.length > 0) ? (
-                                            <PieChart
-                                                number={currentCluster}
-                                                infoCluster={dataCluster}
-                                            ></PieChart>
-                                        ) : (
-                                            <></>
-                                        )}
-                                    </div>
-                                </div>
-                                <div className="contenedor-porcentaje">
-                                    <div className="contenedor-porcentaje-header">
-                                        <p className="texto-porcentaje">
-                                            Porcentaje del dataset usado
-                                        </p>
-                                    </div>
-                                    <div className="contenedor-porcentaje-graph">
-                                        {(currentCluster !== -1) ? (
-                                            <CirculoPorcentaje
-                                                porcentaje={
-                                                    state.clustersInfo[currentCluster].percentage
-                                                }
-                                            ></CirculoPorcentaje>
-                                        ) : (
-                                            <></>
-                                        )}
-                                    </div>
-                                </div>
+
+                            <div className="encabezado-tarjeta-maestra">
+                                <p> Vizualizando Cluster_{currentCluster + 1} </p>
                             </div>
-                            <div className="contenedor-izq-pantalladiv">
-                                {(currentCluster !== -1 && dataCluster.length > 0) ?
-                                    (
-                                        <TextSlider
-                                            info={dataCluster}
-                                            infoLateralBar={[state.clustersInfo, churnvalues]}
-                                        ></TextSlider>
-                                    ) :
-                                    (
-                                        <>
-                                        </>
-                                    )}
+                            <div className="contenedor-general-mitades">
+
+                                <div className="contenedor-der-pantalladiv">
+                                    <div className="contendeor-PieChart">
+                                        <div className="contenedor-PieChart-header">
+                                            <p>Distribución de grupos</p>
+                                        </div>
+                                        <div className="contenedor-PieChart-chart">
+
+                                            {(currentCluster !== -1 && dataCluster.length > 0) ?
+                                                (
+                                                    <PieChart
+                                                        number={currentCluster}
+                                                        infoCluster={dataCluster}
+                                                    ></PieChart>
+                                                ) : (
+                                                    <></>
+                                                )}
+                                        </div>
+                                    </div>
+                                    <div className="contenedor-porcentaje">
+                                        <div className="contenedor-porcentaje-header">
+                                            <p className="texto-porcentaje">
+                                                Porcentaje del dataset usado
+                                            </p>
+                                        </div>
+                                        <div className="contenedor-porcentaje-graph">
+                                            {(currentCluster !== -1) ? (
+                                                <CirculoPorcentaje
+                                                    porcentaje={
+                                                        ((state.clustersInfo[currentCluster].percentage) * 100).toFixed(2)
+                                                    }
+                                                ></CirculoPorcentaje>
+                                            ) : (
+                                                <></>
+                                            )}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="contenedor-izq-pantalladiv">
+                                    {(currentCluster !== -1 && dataCluster.length > 0) ?
+                                        (
+                                            <TextSlider
+                                                info={dataCluster}
+                                                infoLateralBar={[state.clustersInfo, churnvalues]}
+                                                fileName = {state.fileName}
+                                            ></TextSlider>
+                                        ) :
+                                        (
+                                            <>
+                                            </>
+                                        )}
+                                </div>
+
                             </div>
                         </div>
                     </div>

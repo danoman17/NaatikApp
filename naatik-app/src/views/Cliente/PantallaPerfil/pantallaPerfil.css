@@ -26,49 +26,6 @@
     box-shadow: 5px 6px 38px -10px rgba(0,0,0,0.75);
     -webkit-box-shadow: 5px 6px 38px -10px rgba(0,0,0,0.75);
     -moz-box-shadow: 5px 6px 38px -10px rgba(0,0,0,0.75);
-    flex-wrap: wrap;
-    overflow-y: scroll;
-}
-
-.contenedor-texto-header {
-    width: 100%;
-    height: 15%;
-    min-height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.txt-header {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 600;
-    font-family: 'Inter', sans-serif;
-    flex-direction: row;
-    font-size: 1.6rem;
-}
-
-.txt-header-percentages {
-    margin-left: 10px;
-    font-size: 1.6rem;
-    font-weight: bolder;
-}
-
-.normal {
-    color: #E34956;
-}
-
-.bajo {
-    color: #70AE47;
-}
-.medio {
-    color: #EE7D30;
-}
-
-.alto {
-    color: #982B52;
 }
 
 .contenedor-BillAmount-HyM{

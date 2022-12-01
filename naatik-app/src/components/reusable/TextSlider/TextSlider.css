@@ -1,29 +1,39 @@
+#contenedor-general-textslider {
+    -webkit-box-shadow: 2px 2px 20px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 2px 20px -8px rgba(0,0,0,0.75);
+    box-shadow: 2px 2px 20px -8px rgba(0,0,0,0.75);
+}
 
 .btn-textslider-1 {
-    border-radius: 50px;
+    border-radius: 10px;
     border: 2px solid #E34956;
     transition: all 0.3s ease-in-out;
+    width: calc((100%/4)-5px);
 }
 .btn-textslider-1:hover {
     background: #ec838c;
+
 }
 .btn-textslider-2 {
-    border-radius: 50px;
+    border-radius: 10px;
     border: 2px solid #70AE47;
+    width: calc((100%/4)-5px);
 }
 .btn-textslider-2:hover {
     background: #b2d69a;
 }
 .btn-textslider-3 {
-    border-radius: 50px;
+    border-radius: 10px;
     border: 2px solid #EE7D30;
+    width: calc((100%/4)-5px);
 }
 .btn-textslider-3:hover {
     background: #f4ab7b;
 }
 .btn-textslider-4 {
-    border-radius: 50px;
+    border-radius: 10px;
     border: 2px solid #982B52;
+    width: calc((100%/4)-5px);
 }
 .btn-textslider-4:hover {
     background: #d77094;

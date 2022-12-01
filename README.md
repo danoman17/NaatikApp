@@ -1,6 +1,6 @@
 Frontend Naatik Equipo 2 Puebla
 
-Link al repositorio de proyecto: https://github.com/new-superuser-alt9193/DeepLearningBackend
+Link al repositorio de proyecto: https://github.com/new-superuser-alt9193/DeepLearning
 
 Link al repositorio de backend: https://github.com/new-superuser-alt9193/DeepLearningBackend
 

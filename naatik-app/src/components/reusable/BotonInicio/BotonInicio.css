@@ -1,0 +1,42 @@
+.btn-contenedor-general {
+    height: 60%;
+    width: 100%;
+    background: #43AFEF;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+
+.btn-contenedor-general:hover {
+    box-shadow: 3px 4px 48px -10px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 3px 4px 48px -10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 4px 48px -10px rgba(0,0,0,0.75);
+}
+
+.btn-contenedor-general .section-up {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 10rem;
+    
+}
+
+.btn-contenedor-general .section-down {
+    width: 100%;
+    height: 30%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #ffff;
+}

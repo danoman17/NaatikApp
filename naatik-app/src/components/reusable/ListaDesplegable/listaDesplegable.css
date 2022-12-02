@@ -1,0 +1,63 @@
+.contenedor-listaDesplegable {
+    height: 65%;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    box-shadow: 5px 6px 38px -10px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 5px 6px 38px -10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 5px 6px 38px -10px rgba(0,0,0,0.75);
+
+}
+
+.container-listaDesplegable {
+    width: 100%;
+    /* max-width: 460px; */
+}
+
+
+.contenedor-listaDesplegable .header-listaDesplegable {
+    width: 100%;
+    height: 90px;
+    min-height: 60px;
+    border-radius: 8px 8px 0 0 ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background: #0C5380;
+    padding-top: 10px;
+    
+}
+
+.contenedor-listaDesplegable .contenido-listaDesplegable {
+    /* width: 95%;
+    height: auto; */
+    width: 100%;
+    border-radius: 0 0 8px 8px;
+    background: #0C5380;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px 0 10px 0;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    height: 100%;
+
+}
+
+.contenedor-listaDesplegable .contenido-listaDesplegable .container-listaDesplegable {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    overflow-y: scroll;
+    padding: 12px;
+}
+
+

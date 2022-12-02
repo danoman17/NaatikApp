@@ -1,0 +1,19 @@
+.contenedor-navbar {
+    height: 10vh;
+    width: 100%;
+    padding: 5px;
+    background: #43AFEF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo-naatik {
+    height: 100%;
+    width: 60px;
+    background-image: url("../../../Assets/Images//logo-naatik-head.png"); /* The image used */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    cursor: pointer;
+
+}

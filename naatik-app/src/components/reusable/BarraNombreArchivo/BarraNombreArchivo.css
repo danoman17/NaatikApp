@@ -1,0 +1,31 @@
+.contenedor-general-barraFileName {
+    height: 5vh;
+    width: 100%;
+    background: transparent;
+    padding: 5px;
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    cursor:default;
+
+}
+
+.contenedor-general-barraFileName .contenedor-icono {
+
+    height: 100%;
+    width: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-general-barraFileName .contenedor-filename {
+    height: 100%;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

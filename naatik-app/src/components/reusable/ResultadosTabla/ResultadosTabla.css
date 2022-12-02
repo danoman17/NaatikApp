@@ -1,0 +1,87 @@
+.contenedor-general-resultados-tabla {
+
+    height: 90%;
+    width: 100%;
+    border-radius: 5px;
+    background: #D9D9D9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.contenedor-general-resultados-tabla .contenedor-titulo-contenedor {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0px 20px 0px 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+
+.contenedor-general-resultados-tabla .show-results-summary-table {
+    width: 100%;
+    height: 75%;
+    /* display: flex;
+    justify-content: center;
+    align-items: center;*/
+    overflow-y: scroll; 
+    padding: 10px;
+    justify-content: center;
+    border: 0;
+    overflow-x: scroll;
+
+}
+
+
+.contenedor-general-resultados-tabla .show-results-summary-table .show-results-table {
+    height: 100%;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+.show-results-summary-table .show-results-table thead {
+    width: 100%;
+    height: 20%;
+    background: #000;
+    color: #ffff;
+}
+
+.show-results-summary-table .show-results-table thead tr{
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    
+}
+.show-results-summary-table .show-results-table thead tr th{
+    font-weight: 300;
+    border-left: .5px solid #fff;
+    border-right: .5px solid #fff;
+    min-width: 100px;
+
+}
+
+.show-results-summary-table .show-results-table tbody{
+    width: 100%;
+    height: 80%;
+    background: #fff;
+}
+.show-results-summary-table .show-results-table tbody tr{
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    min-height: 200px;
+    
+}
+
+.show-results-summary-table .show-results-table tbody tr td{
+    font-weight: 500;
+    text-align: center;
+    border-left: 0.5px solid #000;
+    border-right: 0.5px solid #000;
+}

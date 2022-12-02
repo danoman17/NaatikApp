@@ -1,0 +1,59 @@
+.probAbandodoTitulo{
+
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+    font-size: .9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+
+}
+
+.porcentageAbandojoNormal{
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #E34956;
+}
+
+.porcentageAbandojoBajo{
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #70AE47;
+}
+
+.porcentageAbandojoMedio{
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.3rem;
+    text-align: center;
+    color: #EE7D30;
+}
+
+.porcentageAbandojoAlto{
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.3rem;
+    text-align: center;
+    color: #982B52;
+}

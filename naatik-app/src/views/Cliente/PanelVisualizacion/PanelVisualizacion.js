@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react'
-
 import { Navbar, TarjetaMaestra, BarraLateral, SliderMultipleIndex, BarraProbAbandono, BotonSubir, BarraNombreArchivo } from '../../../routeIndex';
-
-import './panelVisualizacion.css'
 import { useNavigate, useLocation } from 'react-router-dom';
+import { Spinner } from '@chakra-ui/react'
+import './panelVisualizacion.css'
 
 const PanelVisualizacion = () => {
 
@@ -11,6 +10,8 @@ const PanelVisualizacion = () => {
     // in this case, we get onlu the fileName param
     const { state } = useLocation();
 
+
+    const [loading, setLoading] = useState(false);
     // we create a const in order to use navigate function.
     const navigate = useNavigate();
 
@@ -57,10 +58,11 @@ const PanelVisualizacion = () => {
 
     // funcion para setear los parametros de porcentaje de churn en el backend
     const handleSetParams = () => {
+        setLoading(true);
         fetch('http://localhost:8080/set_churn_segment/' + sliderValue[0] + '/' + sliderValue[1] + '/' + sliderValue[2])
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
+                setLoading(false);
                 navigate('/PantallaDividida',
                     {
                         state: {
@@ -118,7 +120,24 @@ const PanelVisualizacion = () => {
                             </div>
                             {/* button */}
                             <div className='container-btn'>
-                                <BotonSubir onClick={handleSetParams} TextBtn={'Siguiente'} />
+
+                                {
+                                    (loading) ?
+                                        (
+                                            <div className='loading-section'>
+                                                <Spinner
+                                                    thickness='4px'
+                                                    speed='0.65s'
+                                                    emptyColor='gray.200'
+                                                    color='blue.500'
+                                                    size='xl'
+                                                />
+                                            </div>
+                                        ) :
+                                        (
+                                            <BotonSubir onClick={handleSetParams} TextBtn={'Siguiente'} />
+                                        )
+                                }
                             </div>
 
                         </div>

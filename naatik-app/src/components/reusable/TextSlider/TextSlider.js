@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { ShowAmount } from "../../../routeIndex";
 import "./TextSlider.css";
 import {
@@ -8,13 +8,18 @@ import {
     TabPanels,
     Tab,
     TabPanel,
+    Card,
+    CardHeader,
+    CardBody,
 } from "@chakra-ui/react";
+
+
 import { useNavigate } from "react-router-dom";
 
-const TextSlider = ({ info, infoLateralBar, fileName="", currentClusterIndex}) => {
+const TextSlider = ({ info, infoLateralBar, fileName = "", currentClusterIndex }) => {
+
 
     const navigate = useNavigate();
-    const data = [];
 
 
     const goToPerfil = (e) => {
@@ -33,15 +38,6 @@ const TextSlider = ({ info, infoLateralBar, fileName="", currentClusterIndex}) =
         });
     };
 
-    // creamos el metodo que calcula los porcentajes de la PieChart.
-
-    const calculatePercentages = () => {
-        info.map((cluster) => {
-            data.push(cluster["bill amount"]);
-        });
-    };
-
-    calculatePercentages();
 
     return (
         <Tabs
@@ -54,7 +50,6 @@ const TextSlider = ({ info, infoLateralBar, fileName="", currentClusterIndex}) =
             overflow="scroll"
             backgroundColor="#ffff"
             id="contenedor-general-textslider"
-            // border={'.5px #96acb7 solid'}
         >
             <TabList
                 h="15%"
@@ -62,22 +57,21 @@ const TextSlider = ({ info, infoLateralBar, fileName="", currentClusterIndex}) =
                 display="flex"
                 justifyContent="space-around"
                 alignItems="center"
+                borderBottom="2px #D9D9D9 solid"
             >
                 <Tab
                     _selected={{ color: "white", bg: "#E34956", borderRadius: "10px" }}
                     className="btn-textslider-1"
                     aria-selected="true"
                 >
-                    {" "}
-                    <p className="txt-btn-textSlider">Normal</p>{" "}
+                    <p className="txt-btn-textSlider">Normal</p>
                 </Tab>
                 <Tab
                     _selected={{ color: "white", bg: "#70AE47", borderRadius: "10px" }}
                     className="btn-textslider-2"
                     aria-selected="true"
                 >
-                    {" "}
-                    <p className="txt-btn-textSlider">Bajo</p>{" "}
+                    <p className="txt-btn-textSlider">Bajo</p>
                 </Tab>
                 <Tab
                     _selected={{ color: "white", bg: "#EE7D30", borderRadius: "10px" }}
@@ -86,7 +80,7 @@ const TextSlider = ({ info, infoLateralBar, fileName="", currentClusterIndex}) =
                     <p className="txt-btn-textSlider">Medio</p>
                 </Tab>
                 <Tab
-                    _selected={{ color: "white", bg: "#982B52", borderRadius: "10px"}}
+                    _selected={{ color: "white", bg: "#982B52", borderRadius: "10px" }}
                     className="btn-textslider-4"
                 >
                     <p className="txt-btn-textSlider">Alto</p>
@@ -97,11 +91,52 @@ const TextSlider = ({ info, infoLateralBar, fileName="", currentClusterIndex}) =
                 <TabPanel h="100%" w="100%">
                     <div className="contenedor-general-resumen">
                         <div className="parte-arriba">
+
                             {
-                                <ShowAmount
-                                    Label={"Total de Factura: "}
-                                    Amount={data[0].toFixed(2)}
-                                ></ShowAmount>
+                                (info[0]["amount"] === 0) ?
+                                    (
+                                        <div className="card-noInfo">
+                                            <div className="cardHeader-noInfo">
+                                                <h3>Nada que mostrar</h3>
+                                            </div>
+                                            <div className="cardBody-noInfo">
+                                                <p>Al parece la previsualizacion de este perfil no es posible con los datos analizados.</p>
+                                            </div>
+                                        </div>
+                                    ) :
+                                    (
+                                        (info[0]["bill amount"] === 0) ?
+                                            (
+                                                <>
+                                                    <ShowAmount
+                                                        Label={"Elementos en grupo actual"}
+                                                        Amount={info[0]["amount"]}
+                                                        descripcion={"Cantidad total de elementos clasificados en este subgrupo."}
+                                                    ></ShowAmount>
+                                                </>
+                                            ) :
+                                            (
+                                                <>
+                                                    <ShowAmount
+                                                        Label={"Elementos en grupo actual"}
+                                                        Amount={info[0]["amount"]}
+                                                        descripcion={"Cantidad total de elementos clasificados en este subgrupo."}
+                                                    ></ShowAmount>
+                                                    <ShowAmount
+                                                        Label={"Total de Factura: "}
+                                                        Amount={(info[0]["bill amount"]).toFixed(2)}
+                                                        descripcion={"Cantidad total de de factura de los elementos analizados."}
+                                                    ></ShowAmount>
+                                                    <ShowAmount
+                                                        Label={"Ingresos: "}
+                                                        Amount={(info[0]["revenues"]).toFixed(2)}
+                                                        descripcion={"Ingresos totales de este subgrupo."}
+                                                    ></ShowAmount>
+                                                </>
+                                            )
+
+
+                                    )
                             }
                         </div>
                         <div className="parte-abajo">
@@ -115,12 +150,53 @@ const TextSlider = ({ info, infoLateralBar, fileName="", currentClusterIndex}) =
                 <TabPanel h="100%" w="100%">
                     <div className="contenedor-general-resumen">
                         <div className="parte-arriba">
-                            {
-                                <ShowAmount
-                                    Label={"Total de Factura: "}
-                                    Amount={data[1].toFixed(2)}
-                                ></ShowAmount>
+                        {
+                                (info[1]["amount"] === 0) ?
+                                    (
+                                        <div className="card-noInfo">
+                                            <div className="cardHeader-noInfo">
+                                                <h3>Nada que mostrar</h3>
+                                            </div>
+                                            <div className="cardBody-noInfo">
+                                                <p>Al parece la previsualizacion de este perfil no es posible con los datos analizados.</p>
+                                            </div>
+                                        </div>
+                                    ) :
+                                    (
+                                        (info[1]["bill amount"] === 0) ?
+                                            (
+                                                <>
+                                                    <ShowAmount
+                                                        Label={"Elementos en grupo actual"}
+                                                        Amount={info[1]["amount"]}
+                                                        descripcion={"Cantidad total de elementos clasificados en este subgrupo."}
+                                                    ></ShowAmount>
+                                                </>
+                                            ) :
+                                            (
+                                                <>
+                                                    <ShowAmount
+                                                        Label={"Elementos en grupo actual"}
+                                                        Amount={info[1]["amount"]}
+                                                        descripcion={"Cantidad total de elementos clasificados en este subgrupo."}
+                                                    ></ShowAmount>
+                                                    <ShowAmount
+                                                        Label={"Total de Factura: "}
+                                                        Amount={(info[1]["bill amount"]).toFixed(2)}
+                                                        descripcion={"Cantidad total de de factura de los elementos analizados."}
+                                                    ></ShowAmount>
+                                                    <ShowAmount
+                                                        Label={"Ingresos: "}
+                                                        Amount={(info[1]["revenues"]).toFixed(2)}
+                                                        descripcion={"Ingresos totales de este subgrupo."}
+                                                    ></ShowAmount>
+                                                </>
+                                            )
+
+
+                                    )
                             }
+                            
                         </div>
                         <div className="parte-abajo">
                             <Button colorScheme="green" onClick={goToPerfil} a-key={1}>
@@ -133,11 +209,51 @@ const TextSlider = ({ info, infoLateralBar, fileName="", currentClusterIndex}) =
                 <TabPanel h="100%" w="100%">
                     <div className="contenedor-general-resumen">
                         <div className="parte-arriba">
-                            {
-                                <ShowAmount
-                                    Label={"Total de Factura: "}
-                                    Amount={data[2].toFixed(2)}
-                                ></ShowAmount>
+                        {
+                                (info[2]["amount"] === 0) ?
+                                    (
+                                        <div className="card-noInfo">
+                                            <div className="cardHeader-noInfo">
+                                                <h3>Nada que mostrar</h3>
+                                            </div>
+                                            <div className="cardBody-noInfo">
+                                                <p>Al parece la previsualizacion de este perfil no es posible con los datos analizados.</p>
+                                            </div>
+                                        </div>
+                                    ) :
+                                    (
+                                        (info[2]["bill amount"] === 0) ?
+                                            (
+                                                <>
+                                                    <ShowAmount
+                                                        Label={"Elementos en grupo actual"}
+                                                        Amount={info[2]["amount"]}
+                                                        descripcion={"Cantidad total de elementos clasificados en este subgrupo."}
+                                                    ></ShowAmount>
+                                                </>
+                                            ) :
+                                            (
+                                                <>
+                                                    <ShowAmount
+                                                        Label={"Elementos en grupo actual"}
+                                                        Amount={info[2]["amount"]}
+                                                        descripcion={"Cantidad total de elementos clasificados en este subgrupo."}
+                                                    ></ShowAmount>
+                                                    <ShowAmount
+                                                        Label={"Total de Factura: "}
+                                                        Amount={(info[2]["bill amount"]).toFixed(2)}
+                                                        descripcion={"Cantidad total de de factura de los elementos analizados."}
+                                                    ></ShowAmount>
+                                                    <ShowAmount
+                                                        Label={"Ingresos: "}
+                                                        Amount={(info[2]["revenues"]).toFixed(2)}
+                                                        descripcion={"Ingresos totales de este subgrupo."}
+                                                    ></ShowAmount>
+                                                </>
+                                            )
+
+
+                                    )
                             }
                         </div>
                         <div className="parte-abajo">
@@ -151,11 +267,51 @@ const TextSlider = ({ info, infoLateralBar, fileName="", currentClusterIndex}) =
                 <TabPanel h="100%" w="100%" >
                     <div className="contenedor-general-resumen">
                         <div className="parte-arriba">
-                            {
-                                <ShowAmount
-                                    Label={"Total de Factura: "}
-                                    Amount={data[3].toFixed(2)}
-                                ></ShowAmount>
+                        {
+                                (info[3]["amount"] === 0) ?
+                                    (
+                                        <div className="card-noInfo">
+                                            <div className="cardHeader-noInfo">
+                                                <h3>Nada que mostrar</h3>
+                                            </div>
+                                            <div className="cardBody-noInfo">
+                                                <p>Al parece la previsualizacion de este perfil no es posible con los datos analizados.</p>
+                                            </div>
+                                        </div>
+                                    ) :
+                                    (
+                                        (info[3]["bill amount"] === 0) ?
+                                            (
+                                                <>
+                                                    <ShowAmount
+                                                        Label={"Elementos en grupo actual"}
+                                                        Amount={info[3]["amount"]}
+                                                        descripcion={"Cantidad total de elementos clasificados en este subgrupo."}
+                                                    ></ShowAmount>
+                                                </>
+                                            ) :
+                                            (
+                                                <>
+                                                    <ShowAmount
+                                                        Label={"Elementos en grupo actual"}
+                                                        Amount={info[3]["amount"]}
+                                                        descripcion={"Cantidad total de elementos clasificados en este subgrupo."}
+                                                    ></ShowAmount>
+                                                    <ShowAmount
+                                                        Label={"Total de Factura: "}
+                                                        Amount={(info[3]["bill amount"]).toFixed(2)}
+                                                        descripcion={"Cantidad total de de factura de los elementos analizados."}
+                                                    ></ShowAmount>
+                                                    <ShowAmount
+                                                        Label={"Ingresos: "}
+                                                        Amount={(info[3]["revenues"]).toFixed(2)}
+                                                        descripcion={"Ingresos totales de este subgrupo."}
+                                                    ></ShowAmount>
+                                                </>
+                                            )
+
+
+                                    )
                             }
                         </div>
                         <div className="parte-abajo">

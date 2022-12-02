@@ -67,9 +67,13 @@ const PieChart = ({infoCluster}) => {
     arrayAmount.map((amout,key)=> {
       data.push([bringGroupName(key),amout*100/sumaTotal]);
     });
+
+  console.log("data piechart",arrayAmount)
+
   };
 
   calculatePercentages();
+
 
 
   return (

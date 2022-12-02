@@ -59,11 +59,46 @@
 
 
 .contenedor-general-resumen .parte-arriba {
+    width: 100%;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+.parte-arriba .card-noInfo {
     height: 90%;
     width: 100%;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1.5px grey solid;
+    border-radius: 10px;
+}
+
+.parte-arriba .card-noInfo .cardHeader-noInfo {
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 15px;
+    color: #0C5380;
+}
+
+.parte-arriba .card-noInfo .cardBody-noInfo {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 15px;
+    color: #6088A5;
 
 }
 
@@ -74,3 +109,7 @@
     align-items: space;
     justify-content: flex-end;
 }
+
+
+
+

@@ -10,14 +10,14 @@ import {
 
   
 
-const ShowAmount = ({Label, Amount}) => {
+const ShowAmount = ({Label, Amount, descripcion=""}) => {
   return (
 
-        <Stat maxW='sm' boxShadow='md' p='6' rounded='md' bg='white' overflow='hidden'>
+        <Stat maxW='100%' minH='100px' boxShadow='md' p='6' rounded='md' bg='white' overflow='hidden' borderBottom='40px'>
           <StatLabel fontSize="1.5rem" borderBottom="10px">{Label}</StatLabel>
-          <StatNumber>${Amount}</StatNumber>
+          <StatNumber>{Amount}</StatNumber>
           <StatHelpText><StatArrow type='increase' /> 
-            Si el resultado es 0.00, quiere decir que no se encontró relacion con el dataset actual.
+            {descripcion}
           </StatHelpText>
         </Stat>
 

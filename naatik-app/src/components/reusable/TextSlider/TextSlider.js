@@ -64,7 +64,8 @@ const TextSlider = ({ info, infoLateralBar, fileName = "", currentClusterIndex }
                     className="btn-textslider-1"
                     aria-selected="true"
                 >
-                    <p className="txt-btn-textSlider">Normal</p>
+
+                    <p className="txt-btn-textSlider">Permanente</p>
                 </Tab>
                 <Tab
                     _selected={{ color: "white", bg: "#70AE47", borderRadius: "10px" }}

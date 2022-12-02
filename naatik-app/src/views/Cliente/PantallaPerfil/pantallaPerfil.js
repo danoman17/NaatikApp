@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect,useState } from 'react'
 import { Navbar, TarjetaMaestra, BarraLateral, BarraNombreArchivo, ProfileTextSlider } from '../../../routeIndex';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './pantallaPerfil.css'
@@ -14,7 +14,6 @@ const PantallaPerfil = () => {
     // console.log(state.dataCluster);
     // console.log(state.index);
     // console.log(state.fileName);
-
 
 
     return (
@@ -40,6 +39,7 @@ const PantallaPerfil = () => {
                         Medio={(state.churns[1] * 100).toFixed(0)}
                         Alto={(state.churns[2] * 100).toFixed(0)}
                         arrayInfo={state.clusterInfo}
+                        activeBtn={state.currentClusterIndexFinal}
 
                     >
 

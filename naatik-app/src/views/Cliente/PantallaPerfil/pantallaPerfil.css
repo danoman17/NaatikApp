@@ -14,6 +14,8 @@
     align-items: center;;
 }
 
+
+
 .contendor-general-tarjeta .tarjeta-maestra {
     height: 95%;
     width: 95%;
@@ -26,6 +28,19 @@
     box-shadow: 5px 6px 38px -10px rgba(0,0,0,0.75);
     -webkit-box-shadow: 5px 6px 38px -10px rgba(0,0,0,0.75);
     -moz-box-shadow: 5px 6px 38px -10px rgba(0,0,0,0.75);
+}
+
+.contendor-general-tarjeta .tarjeta-maestra .card-back{
+    position: relative;
+    width: 100%;
+
+}
+
+.boton-back{    
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    
 }
 
 .contenedor-BillAmount-HyM{

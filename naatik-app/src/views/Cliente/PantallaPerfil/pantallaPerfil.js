@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import { Navbar, TarjetaMaestra, BarraLateral, BarraNombreArchivo, ProfileTextSlider } from '../../../routeIndex';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import './pantallaPerfil.css'
-
+import { IconButton } from '@chakra-ui/react'
+import { CloseIcon } from '@chakra-ui/icons'
 const PantallaPerfil = () => {
 
     const { state } = useLocation();
+    const navigate = useNavigate();
 
     // console.log(state.clusterInfo);
     // console.log(state.churns);
@@ -46,6 +48,19 @@ const PantallaPerfil = () => {
                     {/* section for general content */}
                     <div className='contendor-general-tarjeta'>
                         <div className='tarjeta-maestra'>
+                            <div className='card-back'>
+                            
+                                <div className='boton-back'>
+                                    <IconButton
+                                        colorScheme='red'
+                                        aria-label='Call Segun'
+                                        size='lg'
+                                        icon={<CloseIcon />}
+                                        onClick={() => navigate(-1)}/>
+                                 </div>
+
+                            </div>
+                            
 
                             {/* we can add components here.... */}
 
@@ -55,7 +70,7 @@ const PantallaPerfil = () => {
                                 porcentajes={state.churns}
                                 clusterNo={state.currentClusterIndexFinal}
                             >
-
+                                
                             </ProfileTextSlider>
 
 

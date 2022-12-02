@@ -167,9 +167,11 @@ const ProfileTextSlider = ({ clusterNames, porcentajes, clusterNo  }) => {
                             
                             <div className='contenedor-texto-header'>
                                 <div className='txt-header'>
-                                    <p className="txt-header-p">Cluster {clusterNo+1} -</p>
-                                    <p className='txt-header-p'>- Subgrupo Permanente: </p>
-                                    <p className={`txt-header-percentages normal`}> 0% - {porcentajes[0] * 100}% </p>
+
+                                    <p className="txt-header-p">Cluster_{clusterNo+1} - </p>
+                                    <p className='txt-header-p'> Subgrupo Permanente: </p>
+                                    <p className={`txt-header-percentages normal`}> 0% - {(porcentajes[0] * 100).toFixed(0)}% </p>
+
                                 </div>
                             </div>
 
@@ -206,9 +208,11 @@ const ProfileTextSlider = ({ clusterNames, porcentajes, clusterNo  }) => {
 
                             <div className='contenedor-texto-header'>
                                 <div className='txt-header'>
-                                    <p className="txt-header-p">Cluster {clusterNo+1} -</p>
-                                    <p className='txt-header-p'>- Subgrupo Bajo: </p>
-                                    <p className={`txt-header-percentages bajo`}> {porcentajes[0] * 100}% - {porcentajes[1] * 100}% </p>
+
+                                    <p className="txt-header-p">Cluster {clusterNo+1} - </p>
+                                    <p className='txt-header-p'> Subgrupo Bajo: </p>
+                                    <p className={`txt-header-percentages bajo`}> {(porcentajes[0] * 100).toFixed(0)}% - {(porcentajes[1] * 100).toFixed(0)}% </p>
+
                                 </div>
                             </div>
 
@@ -245,7 +249,7 @@ const ProfileTextSlider = ({ clusterNames, porcentajes, clusterNo  }) => {
                                 <div className='txt-header'>
                                     <p className="txt-header-p">Cluster {clusterNo+1} - </p>
                                     <p className='txt-header-p'> Subgrupo Medio: </p>
-                                    <p className={`txt-header-percentages medio`}> {porcentajes[1] * 100}% - {porcentajes[2] * 100}% </p>
+                                    <p className={`txt-header-percentages medio`}> {(porcentajes[1] * 100).toFixed(0)}% - {(porcentajes[2] * 100).toFixed(0)}% </p>
                                 </div>
                             </div>
 
@@ -285,7 +289,7 @@ const ProfileTextSlider = ({ clusterNames, porcentajes, clusterNo  }) => {
                                 <div className='txt-header'>
                                     <p className="txt-header-p">Cluster {clusterNo+1} - </p>
                                     <p className='txt-header-p'> Subgrupo Alto: </p>
-                                    <p className={`txt-header-percentages alto`}> {porcentajes[2] * 100}% - {100}% </p>
+                                    <p className={`txt-header-percentages alto`}> {(porcentajes[2] * 100).toFixed(0)}% - {100}% </p>
                                 </div>
                             </div>
 

@@ -178,11 +178,13 @@ const DragDropFile = ({ active = true }) => {
                 header: true
             });
             const parsedData = csv?.data;
-            console.log(parsedData);
+            
             const columns = Object.keys(parsedData[0]);
             arrFinal["rows"].push(columns);
 
             parsedData.forEach((val) => arrFinal["rows"].push(Object.values(val)));
+
+            console.log(arrFinal);
 
             if (active) {
                 
@@ -195,7 +197,8 @@ const DragDropFile = ({ active = true }) => {
                         
                     },
                     body: JSON.stringify(arrFinal),
-                    // body: {}
+
+                    
                     
                 })
                     .then((response) => response.json())

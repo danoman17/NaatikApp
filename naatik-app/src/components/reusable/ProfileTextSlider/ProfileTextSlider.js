@@ -48,6 +48,7 @@ const ProfileTextSlider = ({ clusterNames, porcentajes, clusterNo  }) => {
     const handleImagesProfileAll = async(cluster) => {
         try {
             const response = await fetch("http://localhost:8080/image/cluster/Cluster_"+cluster+"/all");
+            console.log(response)
             const imageBlob = await response.blob();
             const imageObjectURL = URL.createObjectURL(imageBlob);
             setImageAll(imageObjectURL)

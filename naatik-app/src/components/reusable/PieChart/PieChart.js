@@ -29,6 +29,8 @@ const PieChart = ({infoCluster}) => {
   
   const data = [["Grupo","Porcentaje"]];
 
+  console.log(infoCluster);
+
   // creamos el metodo que calcula los porcentajes de la PieChart.
 
   function bringGroupName(index) {
@@ -65,7 +67,13 @@ const PieChart = ({infoCluster}) => {
 
 
     arrayAmount.map((amout,key)=> {
+      if(amout !== 0){
       data.push([bringGroupName(key),amout*100/sumaTotal]);
+
+      }else{
+      data.push([bringGroupName(key),1]);
+
+      }
     });
 
   console.log("data piechart",arrayAmount)

@@ -18,7 +18,7 @@ import { useNavigate } from "react-router-dom";
 
 const TextSlider = ({ info, infoLateralBar, fileName = "", currentClusterIndex }) => {
 
-
+    console.log(info)
     const navigate = useNavigate();
 
 
@@ -106,7 +106,7 @@ const TextSlider = ({ info, infoLateralBar, fileName = "", currentClusterIndex }
                                         </div>
                                     ) :
                                     (
-                                        (info[0]["bill amount"] === 0) ?
+                                        (info[0]["bill amount"] == -1) ?
                                             (
                                                 <>
                                                     <ShowAmount
@@ -164,7 +164,7 @@ const TextSlider = ({ info, infoLateralBar, fileName = "", currentClusterIndex }
                                         </div>
                                     ) :
                                     (
-                                        (info[1]["bill amount"] === 0) ?
+                                        (info[1]["bill amount"] == -1) ?
                                             (
                                                 <>
                                                     <ShowAmount
@@ -223,7 +223,7 @@ const TextSlider = ({ info, infoLateralBar, fileName = "", currentClusterIndex }
                                         </div>
                                     ) :
                                     (
-                                        (info[2]["bill amount"] === 0) ?
+                                        (info[2]["bill amount"] == -1) ?
                                             (
                                                 <>
                                                     <ShowAmount
@@ -281,7 +281,7 @@ const TextSlider = ({ info, infoLateralBar, fileName = "", currentClusterIndex }
                                         </div>
                                     ) :
                                     (
-                                        (info[3]["bill amount"] === 0) ?
+                                        (info[3]["bill amount"] == -1) ?
                                             (
                                                 <>
                                                     <ShowAmount

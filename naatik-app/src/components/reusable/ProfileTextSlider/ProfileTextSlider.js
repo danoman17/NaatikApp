@@ -47,7 +47,7 @@ const ProfileTextSlider = ({ clusterNames, porcentajes, clusterNo  }) => {
 
     const handleImagesProfileAll = async(cluster) => {
         try {
-            const response = await fetch("http://localhost:8080/image/cluster/Cluster_"+cluster+"/all");
+            const response = await fetch("http://localhost:8080/image/cluster/cluster_"+cluster+"/all");
             console.log(response)
             const imageBlob = await response.blob();
             const imageObjectURL = URL.createObjectURL(imageBlob);
@@ -59,7 +59,7 @@ const ProfileTextSlider = ({ clusterNames, porcentajes, clusterNo  }) => {
 
     const handleImagesProfilePerma = async(cluster) => {
         try {
-            const response = await fetch("http://localhost:8080/image/cluster/Cluster_"+cluster+"/permanent");
+            const response = await fetch("http://localhost:8080/image/cluster/cluster_"+cluster+"/permanent");
             const imageBlob = await response.blob();
             const imageObjectURL = URL.createObjectURL(imageBlob);
             setImagePermanent(imageObjectURL);
@@ -70,7 +70,7 @@ const ProfileTextSlider = ({ clusterNames, porcentajes, clusterNo  }) => {
 
     const handleImagesProfileLow = async(cluster) => {
         try {
-            const response = await fetch("http://localhost:8080/image/cluster/Cluster_"+cluster+"/low");
+            const response = await fetch("http://localhost:8080/image/cluster/cluster_"+cluster+"/low");
             const imageBlob = await response.blob();
             const imageObjectURL = URL.createObjectURL(imageBlob);
             setImageBajo(imageObjectURL);
@@ -81,7 +81,7 @@ const ProfileTextSlider = ({ clusterNames, porcentajes, clusterNo  }) => {
 
     const handleImagesProfileMid = async(cluster) => {
         try {
-            const response = await fetch("http://localhost:8080/image/cluster/Cluster_"+cluster+"/mid");
+            const response = await fetch("http://localhost:8080/image/cluster/cluster_"+cluster+"/mid");
             const imageBlob = await response.blob();
             const imageObjectURL = URL.createObjectURL(imageBlob);
             setImageMedio(imageObjectURL);
@@ -92,7 +92,7 @@ const ProfileTextSlider = ({ clusterNames, porcentajes, clusterNo  }) => {
 
     const handleImagesProfileHigh = async(cluster) => {
         try {
-            const response = await fetch("http://localhost:8080/image/cluster/Cluster_"+cluster+"/high");
+            const response = await fetch("http://localhost:8080/image/cluster/cluster_"+cluster+"/high");
             const imageBlob = await response.blob();
             const imageObjectURL = URL.createObjectURL(imageBlob);
             setImageAlto(imageObjectURL);

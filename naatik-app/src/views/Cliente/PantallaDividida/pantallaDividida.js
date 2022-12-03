@@ -39,7 +39,7 @@ const PantallaDividida = () => {
     const fetchClusterInfo = async (clusterNumer) => {
         try {
             const response = await fetch(
-                "http://localhost:8080/cluster/Cluster_" + clusterNumer
+                "http://localhost:8080/cluster/cluster_" + clusterNumer
             );
             const json = await response.json();
             setDataCluster(await json.perfil);
